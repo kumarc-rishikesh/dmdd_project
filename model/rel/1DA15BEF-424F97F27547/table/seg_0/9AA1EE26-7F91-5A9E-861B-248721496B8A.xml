@@ -1,0 +1,130 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="9AA1EE26-7F91-5A9E-861B-248721496B8A" name="EMPLOYEE">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>074440BC-1595-E4EE-8F8F-4BF335E2E803</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="employee_id" id="213881B1-BDFD-6467-C52F-06D8E41FD330">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>85F61854-E873-D458-826A-8460E3B75772</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="phone_no" id="F498CE88-87FD-9B44-A22C-BD171352A92E">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>EB2A4CE8-5482-24D3-3F0A-3E23A7EA1BEB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="gender" id="F282F825-73F0-87D5-52C9-6CF65122DA21">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>2087DF39-E8ED-FC7D-3F1D-3B6C56CA0171</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dob" id="1F993D4E-8045-D07C-DE02-59429E509DB2">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>C9E2D4A6-98F1-4BF1-5142-F05E85F13767</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="doj" id="35A22665-ACEC-7AB5-E739-BC3181DFFA1C">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>2679983C-AC61-DC95-5796-69562C307869</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="salary" id="C2BF0F99-F42B-F569-8F00-091D12D6373C">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>5080E542-5DF7-2404-5037-2D552E7640E9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="SSN" id="18F3A330-CB58-B9B8-2041-E91478EB430A">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>C406E153-E063-65B9-5D94-CDB17944C4BC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="DEPARTMENT_dept_id" id="A8DB372D-4996-8087-95C4-B852FF0B081B">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>6033DB31-CBDE-E9B3-B0D7-88EE5B26B7E3</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="B08B8925-8A67-5D40-35F3-3BA792EE8715" referredColumn="E9BF1547-CC62-0535-B559-B6F53214CD13"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="962C4658-6921-FCAA-1F5A-455C296D5D3C" name="EMPLOYEE_PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>9A159334-D2B0-BD40-4466-B63D1C54ED97</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="213881B1-BDFD-6467-C52F-06D8E41FD330"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="C2DFD25D-386B-9C82-6766-2A8A6745F03A" name="EMPLOYEE_DEPARTMENT_FK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-26 02:28:17 UTC</createdTime>
+<generatorID>CF0A5613-B455-C4DB-2549-FE1ABC6AF678</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A8DB372D-4996-8087-95C4-B852FF0B081B"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
