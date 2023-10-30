@@ -1,7 +1,7 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="C0B542EF-E203-2C18-C28C-B394B8647C70" name="LEASE">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="22D49CB2-DB43-1142-2A37-CD5DC92D0184" name="TRANSACTIONS">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:53:55 UTC</createdTime>
+<createdTime>2023-10-30 10:31:09 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
@@ -15,9 +15,9 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="lease_id" id="30D948C1-179E-3BCF-1B6F-C1E4F5D16218">
+<Attribute name="payment_id" id="7B0611EE-A75A-4C36-493D-4146ACB36FA1">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:54:04 UTC</createdTime>
+<createdTime>2023-10-30 10:31:35 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
@@ -27,33 +27,21 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="start_date" id="C4A811E0-0C4C-967E-4CE5-1711919D8037">
+<Attribute name="type" id="EDACFCB6-DBAA-CB28-A6D1-C3FC57CCE991">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:54:18 UTC</createdTime>
+<createdTime>2023-10-30 10:32:07 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
+<logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="end_date" id="E7A2B74F-0D28-292C-AFD7-6B6113E73320">
+<Attribute name="amount" id="B464DC76-7E96-7BE6-7C41-2696F373981B">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:54:41 UTC</createdTime>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT007</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="room_no" id="3A845278-1F2A-7C00-CF41-C8181B002D24">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:54:52 UTC</createdTime>
+<createdTime>2023-10-30 10:34:59 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
@@ -63,63 +51,51 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="unit_type" id="1BF7C57B-DCDB-5AD0-538F-D2AA9D7C422C">
+<Attribute name="description" id="038E4422-5CF0-21F6-5552-FAECA5D3C471">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:55:27 UTC</createdTime>
+<createdTime>2023-10-30 10:35:17 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="rent_status" id="A8D7BEEF-B815-6F67-2325-67D247C2261F">
+<Attribute name="tr_created" id="BA3BE4B5-F2DF-C0E3-CF58-759DA36D8C7B">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:55:46 UTC</createdTime>
+<createdTime>2023-10-30 10:35:36 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="expiry_status" id="88E74A99-7BE1-14D6-1A23-E1C23E7E34D1">
+<Attribute name="tr_completed" id="F5DB6593-D75A-D4A2-F914-26AD27322CEA">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:56:03 UTC</createdTime>
+<createdTime>2023-10-30 10:36:57 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pending_dues" id="FBB6C87B-E109-7C9A-0EC4-0ABF02B75DD6">
+<Attribute name="tr_status" id="345E9EC0-0952-CD7D-060E-3104E2661765">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:56:19 UTC</createdTime>
+<createdTime>2023-10-30 10:37:11 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="owner_id" id="E15780C3-85A6-31FF-BC11-CCE0BBDFE580">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-26 02:24:20 UTC</createdTime>
-<generatorID>840260AD-0C51-B2DB-35AD-2D1DB471B1F9</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
-</engineerTo>
-<referedAttribute>E5B52BAE-051B-A885-7062-70E00F833239</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>
@@ -127,17 +103,16 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="9B7FE39A-7C51-E3B4-B981-40E7B3452DD1" name="LEASE PK">
+<identifier id="4B0E0397-8EA7-369C-434E-0E991029C89B" name="ACCOUNTS PK">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-25 21:54:16 UTC</createdTime>
+<createdTime>2023-10-30 10:31:46 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
-<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>
-<attributeRef>30D948C1-179E-3BCF-1B6F-C1E4F5D16218</attributeRef>
+<attributeRef>7B0611EE-A75A-4C36-493D-4146ACB36FA1</attributeRef>
 </usedAttributes>
 </identifier>
 </identifiers>

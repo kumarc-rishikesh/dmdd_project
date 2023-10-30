@@ -1,0 +1,105 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="6571670D-EF7E-C47C-0EAB-28CE37A7C7A9" name="TRANSACTIONS">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>22D49CB2-DB43-1142-2A37-CD5DC92D0184</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="payment_id" id="89380D0E-BFFE-C8A1-C9A7-AF6DFD8C5E22">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>7B0611EE-A75A-4C36-493D-4146ACB36FA1</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="type" id="71B0EA23-6F14-E51C-0E1C-0D5BCBB344FF">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>EDACFCB6-DBAA-CB28-A6D1-C3FC57CCE991</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="amount" id="8CA5EBBC-D7D3-DAC4-4F88-A121F5C14B04">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>B464DC76-7E96-7BE6-7C41-2696F373981B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="description" id="3ABB0BCE-6DB9-D235-6096-F8C847E2239A">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>038E4422-5CF0-21F6-5552-FAECA5D3C471</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tr_created" id="D50146B9-B722-FC95-2F8F-E268E7D086C9">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>BA3BE4B5-F2DF-C0E3-CF58-759DA36D8C7B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tr_completed" id="7318E1CB-0DED-9818-C400-B9948F7FD5C8">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>F5DB6593-D75A-D4A2-F914-26AD27322CEA</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="tr_status" id="DF45DB14-3743-DCBD-6C21-D13E28113BBB">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>345E9EC0-0952-CD7D-060E-3104E2661765</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="3FE448D9-0679-1360-BCDD-4E08C01A5894" name="TRANSACTIONS_PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 10:38:13 UTC</createdTime>
+<generatorID>4B0E0397-8EA7-369C-434E-0E991029C89B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="89380D0E-BFFE-C8A1-C9A7-AF6DFD8C5E22"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

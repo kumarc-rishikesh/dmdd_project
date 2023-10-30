@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="0EA0D166-2CD6-2F72-0A1F-3E3EAC2C201C" containerWithKeyObject="05179348-4CCD-42A5-F20C-50D0B6BCC3D1" localFKIndex="2880C2D3-DA04-8C5E-7F0E-4BB8B15CCC4F" name="AMENITY_BOOKING_LEASE_FK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:58:57 UTC</createdTime>
+<generatorID>1856FDFF-C371-E8A4-EA92-2213CBDC13E2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<referredTableLongName>LEASE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D4FA36E6-82B5-690E-018D-AF3B968DD225</referredTableID>
+<keyObject>DAC2E4F9-DC8F-5B6A-AB93-93C4E7FD1D00</keyObject>
+<referredKeyID>DAC2E4F9-DC8F-5B6A-AB93-93C4E7FD1D00</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>lease_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

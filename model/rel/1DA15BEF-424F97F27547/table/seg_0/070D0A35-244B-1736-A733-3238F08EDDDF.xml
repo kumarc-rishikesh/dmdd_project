@@ -1,0 +1,114 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="070D0A35-244B-1736-A733-3238F08EDDDF" name="AMENITIES">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>E69B9AE4-E613-2691-895D-FD16A94EEB8E</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="amenity_id" id="A812EBF1-75DE-81BB-7D85-BE7EED4222EE">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>5E138C8E-3DDA-0494-429E-CCA553C7DE3A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="amenity_name" id="D33B75E4-0ACB-24FF-838D-8E4072C133DA">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>F8F2B1D5-1A67-20BB-2B5C-9344B024B128</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="total_slots" id="7DE277E9-F91D-79B0-9535-59D28A1AFF11">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>5A013FDA-2C5D-DBD3-A123-970A02E24A30</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="available_slots" id="14BD74BF-F328-9CCC-BFA3-D870D03D5C19">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>5D14BC87-6639-0554-72B3-F3FB01C635D7</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="hourly_charge" id="D5299B27-8746-306D-1FC8-D360C3E7DB55">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>AFAB817A-E8D2-A549-3081-9F70A74CD46C</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="seasonal_closure" id="DC51F1ED-7563-B088-2700-1917379697B1">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>B1E1828A-F297-4399-80A6-026E3622926A</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="guest_permitted" id="84A66386-B982-99FF-40A0-77DBAF1F3FEB">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>1AA81330-4CDC-2D82-4DB5-FA9E61D43DA7</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="max_duration_hours" id="49D6573B-7D05-5C84-B7E5-4023FB13354B">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>4FCC966C-446E-240D-9E8C-AA30609AB8A4</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="95D6C000-8EC7-2E8E-77C2-57DF88C06A85" name="AMENITIES_PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>BD5F2FD8-B0B8-F78A-FF9E-D6BBD26BC6EC</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="A812EBF1-75DE-81BB-7D85-BE7EED4222EE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>

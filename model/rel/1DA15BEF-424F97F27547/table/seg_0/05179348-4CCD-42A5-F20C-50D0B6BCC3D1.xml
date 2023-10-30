@@ -1,0 +1,99 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<Table class="oracle.dbtools.crest.model.design.relational.Table" directorySegmentName="seg_0" id="05179348-4CCD-42A5-F20C-50D0B6BCC3D1" name="AMENITY_BOOKING">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>98E7DBCD-25ED-9716-B9A6-3A4B79D30705</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<allowColumnReorder>false</allowColumnReorder>
+<existDependencyGenerateInDDl>true</existDependencyGenerateInDDl>
+<parsed>true</parsed>
+<columns itemClass="oracle.dbtools.crest.model.design.relational.Column">
+<Column name="booking_id" id="AAF3503C-600D-4D99-9056-1F0F5AFE709A">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>F944AA42-2305-FCA8-A65D-2D6F612C9267</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="no_of_guests" id="6CB026DA-5933-F7D7-CDDC-8690A57D7D3F">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>2A34CA5F-7795-63B3-9F96-91C28B5E5F44</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="booking_from" id="3F2EAB72-71F9-B2B5-73D5-CCC2FEDDFD40">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>66A44094-D070-27D4-045D-D3D9017123C9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="AMENITIES_amenity_id" id="5F5DB0EC-5D03-8F01-8B5F-3FD5AEEB8A89">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>249E9024-FD0A-DC5F-A1BA-E40EB05A55D9</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="C05FC170-38BC-BDDC-FD81-2E6BE60A41FC" referredColumn="A812EBF1-75DE-81BB-7D85-BE7EED4222EE"/>
+</associations>
+</Column>
+<Column name="LEASE_lease_id" id="095D863A-2347-2190-9F00-CDDDAE748EDE">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:58:57 UTC</createdTime>
+<generatorID>1326D703-2C0B-6358-F2B3-7EB0B2CB5E92</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<previousColumn>false</previousColumn>
+<autoIncrementCycle>false</autoIncrementCycle>
+<associations>
+<colAssociation fkAssociation="0EA0D166-2CD6-2F72-0A1F-3E3EAC2C201C" referredColumn="15C59517-632C-4D16-D8F3-F6BF10832809"/>
+</associations>
+</Column>
+</columns>
+<indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="73BEA5C7-25EA-4E24-1CBF-E862839B1FD6" name="AMENITY_BOOKING_AMENITIES_FK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:57:15 UTC</createdTime>
+<generatorID>4515AE1B-2F8A-94BF-3B38-564E1434CABB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="5F5DB0EC-5D03-8F01-8B5F-3FD5AEEB8A89"/>
+</indexColumnUsage>
+</ind_PK_UK>
+<ind_PK_UK id="2880C2D3-DA04-8C5E-7F0E-4BB8B15CCC4F" name="AMENITY_BOOKING_LEASE_FK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 05:58:57 UTC</createdTime>
+<generatorID>1856FDFF-C371-E8A4-EA92-2213CBDC13E2</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<indexState>Foreign Key</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="095D863A-2347-2190-9F00-CDDDAE748EDE"/>
+</indexColumnUsage>
+</ind_PK_UK>
+</indexes>
+</Table>
