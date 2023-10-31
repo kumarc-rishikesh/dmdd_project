@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="employee_id" id="85F61854-E873-D458-826A-8460E3B75772">
+<Attribute name="employee id" id="85F61854-E873-D458-826A-8460E3B75772">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:29:35 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="phone_no" id="EB2A4CE8-5482-24D3-3F0A-3E23A7EA1BEB">
+<Attribute name="phone no" id="EB2A4CE8-5482-24D3-3F0A-3E23A7EA1BEB">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:29:51 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -73,7 +73,7 @@
 </engineerTo>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="salary" id="5080E542-5DF7-2404-5037-2D552E7640E9">
@@ -100,9 +100,37 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="dept_id" id="6033DB31-CBDE-E9B3-B0D7-88EE5B26B7E3">
+<Attribute name="dept id" id="46345FE4-B0FB-5B61-3992-4903DC67EBCE">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-26 02:28:03 UTC</createdTime>
+<createdTime>2023-10-31 03:30:58 UTC</createdTime>
+<generatorID>CF0A5613-B455-C4DB-2549-FE1ABC6AF678</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<referedAttribute>2AC63AAA-CDC6-7A77-DF8A-9745458301D1</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="termination date" id="13D5E0E0-8862-C81D-5D75-243C1113D57A">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:08:32 UTC</createdTime>
+<generatorID>05AA08F5-8374-412D-DDA6-1BE8BE0E5CEF</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="DEPARTMENT dept id" id="305CF0F3-56EA-7C29-7014-BEDF82093537">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:08:32 UTC</createdTime>
 <generatorID>CF0A5613-B455-C4DB-2549-FE1ABC6AF678</generatorID>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
@@ -120,8 +148,9 @@
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:29:49 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

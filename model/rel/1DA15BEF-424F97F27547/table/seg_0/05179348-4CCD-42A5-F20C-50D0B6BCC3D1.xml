@@ -41,6 +41,16 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="booking_to" id="22200DA1-75CD-E5C5-5FCA-562D43611168">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 02:53:16 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="AMENITIES_amenity_id" id="5F5DB0EC-5D03-8F01-8B5F-3FD5AEEB8A89">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:57:15 UTC</createdTime>

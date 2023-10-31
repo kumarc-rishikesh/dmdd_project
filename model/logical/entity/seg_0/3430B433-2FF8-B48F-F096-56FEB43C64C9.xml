@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="owner_id" id="E5B52BAE-051B-A885-7062-70E00F833239">
+<Attribute name="owner id" id="E5B52BAE-051B-A885-7062-70E00F833239">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:58:32 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="phone_no" id="E8FAA471-074B-604A-957B-C907002210CE">
+<Attribute name="phone no" id="E8FAA471-074B-604A-957B-C907002210CE">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:58:48 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -81,8 +81,9 @@
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:58:46 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

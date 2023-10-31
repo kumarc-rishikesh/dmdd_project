@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="amenity_id" id="5E138C8E-3DDA-0494-429E-CCA553C7DE3A">
+<Attribute name="amenity id" id="5E138C8E-3DDA-0494-429E-CCA553C7DE3A">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:43:02 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="amenity_name" id="F8F2B1D5-1A67-20BB-2B5C-9344B024B128">
+<Attribute name="amenity name" id="F8F2B1D5-1A67-20BB-2B5C-9344B024B128">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:43:25 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="total_slots" id="5A013FDA-2C5D-DBD3-A123-970A02E24A30">
+<Attribute name="total slots" id="5A013FDA-2C5D-DBD3-A123-970A02E24A30">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:43:55 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -51,7 +51,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="available_slots" id="5D14BC87-6639-0554-72B3-F3FB01C635D7">
+<Attribute name="available slots" id="5D14BC87-6639-0554-72B3-F3FB01C635D7">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:44:27 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -63,7 +63,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="hourly_charge" id="AFAB817A-E8D2-A549-3081-9F70A74CD46C">
+<Attribute name="hourly charge" id="AFAB817A-E8D2-A549-3081-9F70A74CD46C">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:44:44 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -75,19 +75,20 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="seasonal_closure" id="B1E1828A-F297-4399-80A6-026E3622926A">
+<Attribute name="closure start" id="B1E1828A-F297-4399-80A6-026E3622926A">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:46:01 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="guest_permitted" id="1AA81330-4CDC-2D82-4DB5-FA9E61D43DA7">
+<Attribute name="guest permitted" id="1AA81330-4CDC-2D82-4DB5-FA9E61D43DA7">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:47:00 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -99,7 +100,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="max_duration_hours" id="4FCC966C-446E-240D-9E8C-AA30609AB8A4">
+<Attribute name="max duration hours" id="4FCC966C-446E-240D-9E8C-AA30609AB8A4">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:51:01 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -111,14 +112,57 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="closure end" id="FE108632-AAA7-7843-83F9-FD57CBE66837">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:10:59 UTC</createdTime>
+<generatorID>A872FD98-46F3-D7AB-3BAD-934422A36B36</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="closure reason" id="B6AAB7E7-50D2-4B9F-85D0-8E199439F3BB">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:10:59 UTC</createdTime>
+<generatorID>55DA1EB7-C8B8-7668-B20B-50CC85658B2F</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="booking id" id="DDFE128F-EB9D-7B5A-18C0-61EA0BE3C38A">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:09:47 UTC</createdTime>
+<generatorID>4515AE1B-2F8A-94BF-3B38-564E1434CABB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<referedAttribute>F944AA42-2305-FCA8-A65D-2D6F612C9267</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="BD5F2FD8-B0B8-F78A-FF9E-D6BBD26BC6EC" name="AMENITIES PK">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:55:54 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

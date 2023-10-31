@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="lease_id" id="30D948C1-179E-3BCF-1B6F-C1E4F5D16218">
+<Attribute name="lease id" id="30D948C1-179E-3BCF-1B6F-C1E4F5D16218">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:54:04 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="start_date" id="C4A811E0-0C4C-967E-4CE5-1711919D8037">
+<Attribute name="start date" id="C4A811E0-0C4C-967E-4CE5-1711919D8037">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:54:18 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="end_date" id="E7A2B74F-0D28-292C-AFD7-6B6113E73320">
+<Attribute name="end date" id="E7A2B74F-0D28-292C-AFD7-6B6113E73320">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:54:41 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -51,7 +51,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="room_no" id="3A845278-1F2A-7C00-CF41-C8181B002D24">
+<Attribute name="room no" id="3A845278-1F2A-7C00-CF41-C8181B002D24">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:54:52 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -63,7 +63,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="unit_type" id="1BF7C57B-DCDB-5AD0-538F-D2AA9D7C422C">
+<Attribute name="unit type" id="1BF7C57B-DCDB-5AD0-538F-D2AA9D7C422C">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:55:27 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -75,7 +75,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="rent_status" id="A8D7BEEF-B815-6F67-2325-67D247C2261F">
+<Attribute name="rent status" id="A8D7BEEF-B815-6F67-2325-67D247C2261F">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:55:46 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -99,7 +99,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="pending_dues" id="FBB6C87B-E109-7C9A-0EC4-0ABF02B75DD6">
+<Attribute name="pending dues" id="FBB6C87B-E109-7C9A-0EC4-0ABF02B75DD6">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:56:19 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -111,7 +111,31 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="owner_id" id="E15780C3-85A6-31FF-BC11-CCE0BBDFE580">
+<Attribute name="dues last cleared" id="1C93B8D6-00CE-FF6C-98CF-4F2E1A9E0F89">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 23:06:09 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="pending due on" id="A39577F7-F523-C90C-D696-65CF66A54BB7">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 23:06:47 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="OWNER owner id" id="E15780C3-85A6-31FF-BC11-CCE0BBDFE580">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:24:20 UTC</createdTime>
 <generatorID>840260AD-0C51-B2DB-35AD-2D1DB471B1F9</generatorID>

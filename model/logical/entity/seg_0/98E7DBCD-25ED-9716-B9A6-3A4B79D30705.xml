@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="98E7DBCD-25ED-9716-B9A6-3A4B79D30705" name="AMENITY_BOOKING">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="98E7DBCD-25ED-9716-B9A6-3A4B79D30705" name="AMENITY BOOKING">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:49:00 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="booking_id" id="F944AA42-2305-FCA8-A65D-2D6F612C9267">
+<Attribute name="booking id" id="F944AA42-2305-FCA8-A65D-2D6F612C9267">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:49:25 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="no_of_guests" id="2A34CA5F-7795-63B3-9F96-91C28B5E5F44">
+<Attribute name="no of guests" id="2A34CA5F-7795-63B3-9F96-91C28B5E5F44">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:49:39 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -39,7 +39,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="booking_from" id="66A44094-D070-27D4-045D-D3D9017123C9">
+<Attribute name="booking from" id="66A44094-D070-27D4-045D-D3D9017123C9">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:49:48 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -51,21 +51,7 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="amenity_id" id="249E9024-FD0A-DC5F-A1BA-E40EB05A55D9">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-30 05:56:55 UTC</createdTime>
-<generatorID>4515AE1B-2F8A-94BF-3B38-564E1434CABB</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
-</engineerTo>
-<referedAttribute>5E138C8E-3DDA-0494-429E-CCA553C7DE3A</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="lease_id" id="1326D703-2C0B-6358-F2B3-7EB0B2CB5E92">
+<Attribute name="LEASE lease id" id="1326D703-2C0B-6358-F2B3-7EB0B2CB5E92">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:58:32 UTC</createdTime>
 <generatorID>1856FDFF-C371-E8A4-EA92-2213CBDC13E2</generatorID>
@@ -74,6 +60,33 @@
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
 <referedAttribute>30D948C1-179E-3BCF-1B6F-C1E4F5D16218</referedAttribute>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="booking to" id="850D9989-5F44-70CB-7F77-9993292B0CA1">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:10:59 UTC</createdTime>
+<generatorID>22200DA1-75CD-E5C5-5FCA-562D43611168</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
+<Attribute name="AMENITIES amenity id" id="ADB76652-90D3-99FB-CBB2-82E2884D8BAA">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:08:32 UTC</createdTime>
+<generatorID>4515AE1B-2F8A-94BF-3B38-564E1434CABB</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<referedAttribute>5E138C8E-3DDA-0494-429E-CCA553C7DE3A</referedAttribute>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>

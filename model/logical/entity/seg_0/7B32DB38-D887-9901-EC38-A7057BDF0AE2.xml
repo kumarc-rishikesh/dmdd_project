@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="violation_id" id="6A05B17A-EF3B-7515-7A9B-5FE97F525506">
+<Attribute name="violation id" id="6A05B17A-EF3B-7515-7A9B-5FE97F525506">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:56:52 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -52,7 +52,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="penalty_status" id="77A1937C-9CC5-0E4E-4BFE-7FB6829998B9">
+<Attribute name="penalty status" id="77A1937C-9CC5-0E4E-4BFE-7FB6829998B9">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:57:55 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -65,7 +65,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="lease_id" id="9500A0B7-1A0B-FFA0-E516-380E967F4A6A">
+<Attribute name="LEASE lease id" id="9500A0B7-1A0B-FFA0-E516-380E967F4A6A">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:23:02 UTC</createdTime>
 <generatorID>15598895-489D-4591-C0AC-5D0F061ECA87</generatorID>
@@ -86,8 +86,9 @@
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:57:01 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

@@ -42,18 +42,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="penalty_status" id="A7734590-2644-CEF4-F368-105F6FBA6CD6">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-26 02:28:17 UTC</createdTime>
-<generatorID>77A1937C-9CC5-0E4E-4BFE-7FB6829998B9</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<nullsAllowed>true</nullsAllowed>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="LEASE_lease_id" id="E90904FA-DB69-E5EF-AFB1-5F94B5F5E3F7">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:28:17 UTC</createdTime>

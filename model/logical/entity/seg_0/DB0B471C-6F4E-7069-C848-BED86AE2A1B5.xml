@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="resident_id" id="96C3472B-F3AB-6686-352F-F300EB63897A">
+<Attribute name="resident id" id="96C3472B-F3AB-6686-352F-F300EB63897A">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:51:41 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -27,7 +27,7 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="phone_no" id="939CCC83-205F-AFE1-E176-F749EFFC79AA">
+<Attribute name="phone no" id="939CCC83-205F-AFE1-E176-F749EFFC79AA">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:51:51 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -90,7 +90,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="lease_id" id="F0583E9A-FB84-48C4-06DE-FCF71C5E5140">
+<Attribute name="LEASE lease id" id="F0583E9A-FB84-48C4-06DE-FCF71C5E5140">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:22:05 UTC</createdTime>
 <generatorID>CCC82092-1B1A-64E4-7E97-C4C5C3EEB225</generatorID>
@@ -110,8 +110,9 @@
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 21:51:49 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

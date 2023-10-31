@@ -1,0 +1,17 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<FKIndexAssociation class="oracle.dbtools.crest.model.design.relational.FKIndexAssociation" directorySegmentName="seg_0" id="AD673064-08F6-7A8D-18D3-AE3399EF05F1" containerWithKeyObject="0B1EF64E-F899-1651-C0CA-40A5F36F631B" localFKIndex="BF88FD26-BA3B-119B-3146-E532EC633B5C" name="UTILITY_LEASE_FK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 23:18:09 UTC</createdTime>
+<generatorID>AE7AD925-E01D-CCAF-3278-33FE344D4276</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<referredTableLongName>LEASE</referredTableLongName>
+<deleteRule>NO ACTION</deleteRule>
+<referredTableID>D4FA36E6-82B5-690E-018D-AF3B968DD225</referredTableID>
+<keyObject>DAC2E4F9-DC8F-5B6A-AB93-93C4E7FD1D00</keyObject>
+<referredKeyID>DAC2E4F9-DC8F-5B6A-AB93-93C4E7FD1D00</referredKeyID>
+<mandatory>true</mandatory>
+<refColNames>lease_id</refColNames>
+<transferable>true</transferable>
+<rely>false</rely>
+<columnDependencyConstraintGenerateInDDL>true</columnDependencyConstraintGenerateInDDL>
+</FKIndexAssociation>

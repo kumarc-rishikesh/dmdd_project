@@ -41,17 +41,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="available_slots" id="14BD74BF-F328-9CCC-BFA3-D870D03D5C19">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-30 05:57:15 UTC</createdTime>
-<generatorID>5D14BC87-6639-0554-72B3-F3FB01C635D7</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="hourly_charge" id="D5299B27-8746-306D-1FC8-D360C3E7DB55">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:57:15 UTC</createdTime>
@@ -63,11 +52,34 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="seasonal_closure" id="DC51F1ED-7563-B088-2700-1917379697B1">
+<Column name="closure_start" id="DC51F1ED-7563-B088-2700-1917379697B1">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:57:15 UTC</createdTime>
 <generatorID>B1E1828A-F297-4399-80A6-026E3622926A</generatorID>
 <ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="closure_end" id="A872FD98-46F3-D7AB-3BAD-934422A36B36">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:02:59 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="closure_reason" id="55DA1EB7-C8B8-7668-B20B-50CC85658B2F">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:04:52 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT024</logicalDatatype>

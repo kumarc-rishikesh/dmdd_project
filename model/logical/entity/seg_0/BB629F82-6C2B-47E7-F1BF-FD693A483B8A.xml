@@ -1,5 +1,5 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BB629F82-6C2B-47E7-F1BF-FD693A483B8A" name="SERVICE_REQUEST">
+<Entity class="oracle.dbtools.crest.model.design.logical.Entity" directorySegmentName="seg_0" id="BB629F82-6C2B-47E7-F1BF-FD693A483B8A" name="SERVICE REQUEST">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:04:46 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="request_id" id="273D8748-7EFE-CCA2-CF57-CA544EF2039A">
+<Attribute name="request id" id="273D8748-7EFE-CCA2-CF57-CA544EF2039A">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:05:02 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -63,7 +63,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="scheduled_for" id="3A75CA65-0A85-4B51-42CD-D5EDF1EECB36">
+<Attribute name="scheduled for" id="3A75CA65-0A85-4B51-42CD-D5EDF1EECB36">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:06:51 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -75,7 +75,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="completed_at" id="77B37E70-D427-6E9F-13CE-FFCF754F2F6D">
+<Attribute name="completed at" id="77B37E70-D427-6E9F-13CE-FFCF754F2F6D">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:07:05 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -88,7 +88,7 @@
 <logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="resident_name" id="089A5B6C-75F8-4DEA-0AF6-D6BE74D45819">
+<Attribute name="resident name" id="089A5B6C-75F8-4DEA-0AF6-D6BE74D45819">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:07:30 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
@@ -100,7 +100,7 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="lease_id" id="89E680C9-CD6A-FD3F-9C7E-A3E35B53A44C">
+<Attribute name="LEASE lease id" id="89E680C9-CD6A-FD3F-9C7E-A3E35B53A44C">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:26:56 UTC</createdTime>
 <generatorID>B75ADFB9-3F12-5103-BC5D-D277A4E0487D</generatorID>
@@ -117,12 +117,13 @@
 </Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
-<identifier id="FBD94954-88E0-C533-C9B0-C42A970A1991" name="SERVICE_REQUEST PK">
+<identifier id="FBD94954-88E0-C533-C9B0-C42A970A1991" name="SERVICE_REQUEST_PK">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-25 22:05:11 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
+<shouldEngineer>false</shouldEngineer>
 <engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="false"/>
 </engineerTo>
 <pk>true</pk>
 <usedAttributes>

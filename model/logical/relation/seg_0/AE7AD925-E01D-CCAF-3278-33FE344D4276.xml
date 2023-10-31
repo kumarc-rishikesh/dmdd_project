@@ -1,19 +1,19 @@
 <?xml version = '1.0' encoding = 'UTF-8'?>
-<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="AMENITY BOOKING AMENITIES FK" directorySegmentName="seg_0" id="4515AE1B-2F8A-94BF-3B38-564E1434CABB">
+<Relation class="oracle.dbtools.crest.model.design.logical.Relation" name="UTILITY LEASE FK" directorySegmentName="seg_0" id="AE7AD925-E01D-CCAF-3278-33FE344D4276">
 <createdBy>kumar</createdBy>
-<createdTime>2023-10-30 05:56:26 UTC</createdTime>
+<createdTime>2023-10-30 23:15:47 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>
 <engineerTo>
 <item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
 </engineerTo>
-<targetPk>BD5F2FD8-B0B8-F78A-FF9E-D6BBD26BC6EC</targetPk>
+<sourcePk>9B7FE39A-7C51-E3B4-B981-40E7B3452DD1</sourcePk>
 <identifying>false</identifying>
 <optionalSource>false</optionalSource>
 <optionalTarget>false</optionalTarget>
 <sourceCardinality>1</sourceCardinality>
-<sourceEntity>98E7DBCD-25ED-9716-B9A6-3A4B79D30705</sourceEntity>
+<sourceEntity>C0B542EF-E203-2C18-C28C-B394B8647C70</sourceEntity>
 <targetCardinalityString>*</targetCardinalityString>
-<targetEntity>E69B9AE4-E613-2691-895D-FD16A94EEB8E</targetEntity>
+<targetEntity>21D71C82-D884-5F6D-5E25-24D42C7E71DC</targetEntity>
 <transferable>true</transferable>
 <deleteRule>NO ACTION</deleteRule>
 </Relation>

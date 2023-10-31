@@ -74,17 +74,6 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
-<Column name="expiry_status" id="9667D048-E4ED-CE61-F47A-156F98709292">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-26 02:28:17 UTC</createdTime>
-<generatorID>88E74A99-7BE1-14D6-1A23-E1C23E7E34D1</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-<autoIncrementCycle>false</autoIncrementCycle>
-</Column>
 <Column name="pending_dues" id="9F1B8142-606C-7D33-0B59-EAE991ED10A2">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:28:17 UTC</createdTime>
@@ -93,6 +82,28 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="dues_last_cleared" id="6E32E37B-5AE0-3079-0E07-15938EC7969B">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 23:18:09 UTC</createdTime>
+<generatorID>1C93B8D6-00CE-FF6C-98CF-4F2E1A9E0F89</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
+<Column name="pending_due_on" id="3E74E005-7277-F03F-22DA-1189AAD8D33B">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-30 23:18:09 UTC</createdTime>
+<generatorID>A39577F7-F523-C90C-D696-65CF66A54BB7</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT007</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
