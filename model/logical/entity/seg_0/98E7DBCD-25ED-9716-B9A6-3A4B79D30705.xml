@@ -51,6 +51,19 @@
 <logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="booking to" id="850D9989-5F44-70CB-7F77-9993292B0CA1">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 03:10:59 UTC</createdTime>
+<generatorID>22200DA1-75CD-E5C5-5FCA-562D43611168</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT008</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 <Attribute name="LEASE lease id" id="1326D703-2C0B-6358-F2B3-7EB0B2CB5E92">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:58:32 UTC</createdTime>
@@ -63,19 +76,6 @@
 <useDomainConstraints>false</useDomainConstraints>
 <use>1</use>
 <logicalDatatype>LOGDT019</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
-<Attribute name="booking to" id="850D9989-5F44-70CB-7F77-9993292B0CA1">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-31 03:10:59 UTC</createdTime>
-<generatorID>22200DA1-75CD-E5C5-5FCA-562D43611168</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
-</engineerTo>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT008</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
 <Attribute name="AMENITIES amenity id" id="ADB76652-90D3-99FB-CBB2-82E2884D8BAA">
@@ -92,5 +92,45 @@
 <logicalDatatype>LOGDT019</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
+<Attribute name="cancellation status" id="55E3D9D1-5D22-651B-D7F3-834CD7D8CDC3">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:35:19 UTC</createdTime>
+<generatorID>5ADA7A30-0AFD-855D-6B3D-AEFA16383E4B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+</Attribute>
 </attributes>
+<identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
+<identifier id="C5A15282-D6F9-3D1B-B68C-4A7E5BCE9E69" name="AMENITY BOOKING PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:34:25 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<usedAttributes>
+<attributeRef>F944AA42-2305-FCA8-A65D-2D6F612C9267</attributeRef>
+</usedAttributes>
+</identifier>
+<identifier id="D37950C8-02E1-F4B7-899F-01B7232A4251" name="AMENITY BOOKING PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:35:19 UTC</createdTime>
+<generatorID>373E037B-6BD8-7035-7258-76A47A994E7B</generatorID>
+<ownerDesignName>model</ownerDesignName>
+<engineerTo>
+<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
+</engineerTo>
+<pk>true</pk>
+<usedAttributes>
+<attributeRef>F944AA42-2305-FCA8-A65D-2D6F612C9267</attributeRef>
+</usedAttributes>
+</identifier>
+</identifiers>
 </Entity>

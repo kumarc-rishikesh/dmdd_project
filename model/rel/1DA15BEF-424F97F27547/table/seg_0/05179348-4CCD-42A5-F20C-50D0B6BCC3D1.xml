@@ -51,6 +51,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="cancellation_status" id="5ADA7A30-0AFD-855D-6B3D-AEFA16383E4B">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:33:57 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="AMENITIES_amenity_id" id="5F5DB0EC-5D03-8F01-8B5F-3FD5AEEB8A89">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:57:15 UTC</createdTime>
@@ -83,6 +94,17 @@
 </Column>
 </columns>
 <indexes itemClass="oracle.dbtools.crest.model.design.relational.Index">
+<ind_PK_UK id="373E037B-6BD8-7035-7258-76A47A994E7B" name="AMENITY_BOOKING_PK">
+<createdBy>kumar</createdBy>
+<createdTime>2023-10-31 04:33:57 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<pk>true</pk>
+<indexState>Primary Constraint</indexState>
+<isSurrogateKey>false</isSurrogateKey>
+<indexColumnUsage>
+<colUsage columnID="AAF3503C-600D-4D99-9056-1F0F5AFE709A"/>
+</indexColumnUsage>
+</ind_PK_UK>
 <ind_PK_UK id="73BEA5C7-25EA-4E24-1CBF-E862839B1FD6" name="AMENITY_BOOKING_AMENITIES_FK">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 05:57:15 UTC</createdTime>
