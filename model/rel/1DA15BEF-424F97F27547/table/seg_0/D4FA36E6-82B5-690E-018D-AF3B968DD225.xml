@@ -63,6 +63,16 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="rent" id="6ABF0853-4767-5E0F-92C4-A36F35FF5555">
+<createdBy>kumar</createdBy>
+<createdTime>2023-11-01 07:05:48 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT019</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="rent_status" id="97EC768D-658E-7A00-A458-D01E389F2407">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:28:17 UTC</createdTime>

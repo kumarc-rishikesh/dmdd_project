@@ -41,6 +41,17 @@
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 <autoIncrementCycle>false</autoIncrementCycle>
 </Column>
+<Column name="gender" id="285466BC-2B8C-657F-AE3E-CCBF372B0CE0">
+<createdBy>kumar</createdBy>
+<createdTime>2023-11-01 07:10:17 UTC</createdTime>
+<ownerDesignName>model</ownerDesignName>
+<nullsAllowed>true</nullsAllowed>
+<useDomainConstraints>false</useDomainConstraints>
+<use>1</use>
+<logicalDatatype>LOGDT024</logicalDatatype>
+<ownDataTypeParameters>,,</ownDataTypeParameters>
+<autoIncrementCycle>false</autoIncrementCycle>
+</Column>
 <Column name="dob" id="AFCA29FE-316F-39FA-53D5-A24C6B50A4C6">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-26 02:28:17 UTC</createdTime>
