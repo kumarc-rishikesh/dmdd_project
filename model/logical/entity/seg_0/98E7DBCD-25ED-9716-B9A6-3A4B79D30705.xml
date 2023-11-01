@@ -119,7 +119,7 @@
 <attributeRef>F944AA42-2305-FCA8-A65D-2D6F612C9267</attributeRef>
 </usedAttributes>
 </identifier>
-<identifier id="D37950C8-02E1-F4B7-899F-01B7232A4251" name="AMENITY BOOKING PK">
+<identifier id="D37950C8-02E1-F4B7-899F-01B7232A4251" name="AMENITY_BOOKING_PK">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-31 04:35:19 UTC</createdTime>
 <generatorID>373E037B-6BD8-7035-7258-76A47A994E7B</generatorID>

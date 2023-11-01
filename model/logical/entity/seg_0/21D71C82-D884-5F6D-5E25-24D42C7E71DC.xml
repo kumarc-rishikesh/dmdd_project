@@ -15,7 +15,7 @@
 <minVolumes>0</minVolumes>
 <normalForm>Third</normalForm>
 <attributes itemClass="oracle.dbtools.crest.model.design.logical.Attribute">
-<Attribute name="utility id" id="D72B8A4D-E41D-3A15-5044-3538F9097E2E">
+<Attribute name="utility billing id" id="D72B8A4D-E41D-3A15-5044-3538F9097E2E">
 <createdBy>kumar</createdBy>
 <createdTime>2023-10-30 23:12:47 UTC</createdTime>
 <ownerDesignName>model</ownerDesignName>

@@ -39,20 +39,6 @@
 <logicalDatatype>LOGDT024</logicalDatatype>
 <ownDataTypeParameters>,,</ownDataTypeParameters>
 </Attribute>
-<Attribute name="employee id" id="89F163D0-3E32-0C76-6157-3040C0C95A0D">
-<createdBy>kumar</createdBy>
-<createdTime>2023-10-31 04:35:19 UTC</createdTime>
-<generatorID>CF0A5613-B455-C4DB-2549-FE1ABC6AF678</generatorID>
-<ownerDesignName>model</ownerDesignName>
-<engineerTo>
-<item key="1DA15BEF-61E2-150A-392E-424F97F27547" value="true"/>
-</engineerTo>
-<referedAttribute>85F61854-E873-D458-826A-8460E3B75772</referedAttribute>
-<useDomainConstraints>false</useDomainConstraints>
-<use>1</use>
-<logicalDatatype>LOGDT024</logicalDatatype>
-<ownDataTypeParameters>,,</ownDataTypeParameters>
-</Attribute>
 </attributes>
 <identifiers itemClass="oracle.dbtools.crest.model.design.logical.CandidateKey">
 <identifier id="AE0185BA-6BBF-C838-5B93-94B641E7FF83" name="DEPARTMENT PK">
