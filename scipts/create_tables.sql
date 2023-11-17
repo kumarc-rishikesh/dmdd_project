@@ -1,4 +1,4 @@
-SET SERVEROUTPUT ON 
+--SET SERVEROUTPUT ON 
 BEGIN 
 	FOR I IN (
 		WITH MYOBJECTS AS (
@@ -39,16 +39,16 @@ EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE(SQLERRM);
 END;
-/
+--/
 
 CREATE SEQUENCE OWNER_ID_SEQ;
 CREATE TABLE OWNER (
       owner_id    				    NUMBER PRIMARY KEY,
-      phone_no    				    NUMBER NOT NULL,
-      nationality 				    VARCHAR2(250) NOT NULL,
-      gender				        VARCHAR2(250),
+      phone_no    				    NUMBER 	UNIQUE NOT NULL,
+      nationality 				    VARCHAR2(50) NOT NULL,
+      gender				        VARCHAR2(50),
       dob				            DATE NOT NULL,
-      ssn				            VARCHAR2(250) NOT NULL
+      ssn				            VARCHAR2(9) UNIQUE NOT NULL
     );
 
 CREATE SEQUENCE LEASE_ID_SEQ;
@@ -57,10 +57,10 @@ CREATE TABLE LEASE (
 	  start_date         			DATE NOT NULL,
 	  end_date        			    DATE NOT NULL,
 	  room_no           			NUMBER NOT NULL,
-	  unit_type        			    VARCHAR2(100) NOT NULL,
+	  unit_type        			    VARCHAR2(50) NOT NULL,
 	  rent            			    NUMBER NOT NULL,
-	  rent_status        			VARCHAR2(250) NOT NULL,
-	  pending_dues 			       	VARCHAR2(250),
+	  rent_status        			VARCHAR2(50) NOT NULL,
+	  pending_dues 			       	NUMBER,
 	  dues_last_cleared				DATE,
 	  pending_due_on      			DATE,
 	  OWNER_owner_id     			REFERENCES OWNER(owner_id) NOT NULL
@@ -71,23 +71,23 @@ CREATE SEQUENCE RESIDENT_ID_SEQ;
 CREATE TABLE RESIDENT (
       resident_id					NUMBER PRIMARY KEY,
       phone_no					    NUMBER NOT NULL,
-      nationality					VARCHAR2(250) NOT NULL,
-      gender						VARCHAR2(250) NOT NULL,
+      nationality					VARCHAR2(50) NOT NULL,
+      gender						VARCHAR2(50) ,
       dob							DATE,
-      SSN							VARCHAR2(250) NOT NULL,
+      SSN							VARCHAR2(9) UNIQUE ,
       LEASE_lease_id				REFERENCES LEASE(lease_id) NOT NULL
     );
 
 CREATE SEQUENCE AMENITIES_ID_SEQ;
 CREATE TABLE AMENITIES (
       amenity_id        			NUMBER PRIMARY KEY,
-      amenity_name      			VARCHAR2(250) NOT NULL,
-      total_slots       			NUMBER NOT NULL,
+      amenity_name      			VARCHAR2(50) NOT NULL,
+      total_slots       			NUMBER DEFAULT 100 NOT NULL,
       hourly_charge     			NUMBER NOT NULL,
       closure_start     			DATE,
       closure_end       			DATE,
       closure_reason    			VARCHAR(250),
-      guests_permitted  			VARCHAR2(250) NOT NULL,
+      guests_permitted  			NUMBER NOT NULL,
       max_duration_hours			NUMBER NOT NULL 
     );
 
@@ -99,18 +99,19 @@ CREATE TABLE AMENITY_BOOKING (
       booking_to       			DATE NOT NULL,
       cancellation_status		VARCHAR2(250),
       AMENITY_amenity_id        REFERENCES AMENITIES(amenity_id) NOT NULL,
-      LEASE_lease_id			REFERENCES LEASE(lease_id) NOT NULL
+      LEASE_lease_id			REFERENCES LEASE(lease_id) NOT NULL,
     ); 
 
  CREATE SEQUENCE UTILITY_ID_SEQ;
  CREATE TABLE UTILITY (
      utility_billing_id				NUMBER PRIMARY KEY,
-     utility_name					VARCHAR2(250) NOT NULL,
+     utility_name					VARCHAR2(50) NOT NULL,
      utility_cost					NUMBER NOT NULL,
-     unit_metric      	 			VARCHAR2(250) NOT NULL,
+     unit_metric      	 			VARCHAR2(10) NOT NULL,
      curr_cycle_units				NUMBER NOT NULL,
      cycle_billed_on				DATE NOT NULL,
-     LEASE_lease_id					NUMBER NOT NULL 
+     LEASE_lease_id					NUMBER NOT NULL,
+     CONSTRAINT check_utility_name CHECK (UPPER(utility_name) IN ('ELECTRICITY', 'WATER', 'GAS'))
    );
 
 CREATE SEQUENCE VIOLATION_ID_SEQ;
@@ -122,23 +123,25 @@ CREATE TABLE VIOLATIONS (
     );
  
 
-CREATE SEQUENCE SERVICE_REQUEST_ID_SEQ;
-CREATE TABLE SERVICE_REQUEST (
-      request_id      				NUMBER PRIMARY KEY,
-      LEASE_lease_id  				REFERENCES LEASE(lease_id) NOT NULL,
-      type            				VARCHAR2(250) NOT NULL,
-      dept             				VARCHAR2(250) NOT NULL,
-      status           				VARCHAR2(250),
-      scheduled_for    				DATE,
-      completed_at     				DATE,
-      resident_name    				VARCHAR2(250) NOT NULL
-    );
-
 CREATE SEQUENCE DEPT_ID_SEQ;
 CREATE TABLE DEPARTMENT (
       dept_id          				NUMBER PRIMARY KEY,
       name			  				VARCHAR2(250) NOT NULL
     );
+   
+
+CREATE SEQUENCE SERVICE_REQUEST_ID_SEQ;
+CREATE TABLE SERVICE_REQUEST (
+      request_id      				NUMBER PRIMARY KEY,
+      LEASE_lease_id  				REFERENCES LEASE(lease_id) NOT NULL,
+      type            				VARCHAR2(250) NOT NULL,
+      dept             				REFERENCES DEPARTMENT(dept_id) NOT NULL,
+      status           				VARCHAR2(50),
+      scheduled_for    				DATE,
+      completed_at     				DATE,
+      resident_name    				VARCHAR2(250) NOT NULL
+    );
+   
    
 CREATE SEQUENCE EMPLOYEE_ID_SEQ;
 CREATE TABLE EMPLOYEE (
@@ -149,7 +152,7 @@ CREATE TABLE EMPLOYEE (
       doj							DATE NOT NULL,
       termination_date				DATE,
       salary						NUMBER NOT NULL,
-      SSN							VARCHAR2(250),
+      SSN							VARCHAR2(50),
       DEPARTENT_dept_id				REFERENCES DEPARTMENT(dept_id) NOT NULL
     );
 
