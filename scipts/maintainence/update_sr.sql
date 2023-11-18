@@ -1,5 +1,5 @@
 CREATE OR REPLACE PROCEDURE update_sr(p_request_id IN NUMBER, p_status IN VARCHAR2) AS
-    v_status VARCHAR2(50) := p_status;
+    v_status VARCHAR2(50) := 'COMPLETED';
     v_exists VARCHAR2(1) := 'N';
     NOT_FOUND EXCEPTION;
 BEGIN
