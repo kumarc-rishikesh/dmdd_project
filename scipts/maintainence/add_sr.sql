@@ -18,16 +18,16 @@ BEGIN
     END IF;
 
     IF p_type = 'Electric' THEN
-        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT, RESIDENT_NAME)
-        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 1, v_name);
+        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT, STATUS, RESIDENT_NAME)
+        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 1,'OPEN', v_name);
         DBMS_OUTPUT.PUT_LINE('Your Electric Maintenance is reported and will be assisted soon! Thank you :)');
     ELSIF p_type = 'Plumbing' THEN
-        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT, RESIDENT_NAME)
-        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 2, v_name);
+        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT,STATUS, RESIDENT_NAME)
+        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 2,'OPEN', v_name);
         DBMS_OUTPUT.PUT_LINE('Your Plumbing Maintenance is reported and will be assisted soon! Thank you :)');
     ELSIF p_type = 'General' THEN
-        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT, RESIDENT_NAME)
-        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 3, v_name);
+        INSERT INTO service_request (REQUEST_ID, LEASE_LEASE_ID, TYPE, DEPT,STATUS, RESIDENT_NAME)
+        VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL, p_lease_id, p_type, 3,'OPEN', v_name);
         DBMS_OUTPUT.PUT_LINE('Your General Maintenance is reported and will be assisted soon! Thank you :)');
     END IF;
 
