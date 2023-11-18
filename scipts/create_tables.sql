@@ -71,6 +71,7 @@ CREATE TABLE LEASE (
 CREATE SEQUENCE RESIDENT_ID_SEQ;
 CREATE TABLE RESIDENT (
       resident_id					NUMBER PRIMARY KEY,
+      resident_name                 VARCHAR2(50) NOT NULL,
       phone_no					    NUMBER NOT NULL,
       nationality					VARCHAR2(50) NOT NULL,
       gender						VARCHAR2(50) ,
@@ -147,8 +148,9 @@ CREATE TABLE SERVICE_REQUEST (
 CREATE SEQUENCE EMPLOYEE_ID_SEQ;
 CREATE TABLE EMPLOYEE (
       employee_id					NUMBER PRIMARY KEY,
+      employee_name                 VARCHAR2(50),
       phone_no						NUMBER NOT NULL,	
-      gender						VARCHAR2(250),
+      gender						VARCHAR2(50),
       dob							DATE NOT NULL,
       doj							DATE NOT NULL,
       termination_date				DATE,
