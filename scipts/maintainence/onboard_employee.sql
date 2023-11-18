@@ -1,4 +1,5 @@
 CREATE OR REPLACE PROCEDURE onboard_employee(
+    p_employee_name IN VARCHAR2,
     p_phone_no IN NUMBER,
     p_gender IN VARCHAR2,
     p_dob IN DATE,
@@ -10,9 +11,9 @@ CREATE OR REPLACE PROCEDURE onboard_employee(
     PRAGMA EXCEPTION_INIT(EMPLOYEE_ALREADY_EXISTS, -1);
 BEGIN
     INSERT INTO employee (
-        EMPLOYEE_ID, PHONE_NO, GENDER, DOB, DOJ, TERMINATION_DATE, SALARY, SSN, DEPARTENT_DEPT_ID
+        EMPLOYEE_ID, EMPLOYEE_NAME, PHONE_NO, GENDER, DOB, DOJ, TERMINATION_DATE, SALARY, SSN, DEPARTENT_DEPT_ID
     ) VALUES (
-        EMPLOYEE_ID_SEQ.NEXTVAL, p_phone_no, p_gender, p_dob, SYSDATE, NULL, p_salary, p_ssn, p_department_dept_id
+        EMPLOYEE_ID_SEQ.NEXTVAL, p_employee_name, p_phone_no, p_gender, p_dob, SYSDATE, NULL, p_salary, p_ssn, p_department_dept_id
     );
     
     COMMIT;
