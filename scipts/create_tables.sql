@@ -44,6 +44,7 @@ END;
 CREATE SEQUENCE OWNER_ID_SEQ;
 CREATE TABLE OWNER (
       owner_id    				    NUMBER PRIMARY KEY,
+      owner_name                    VARCHAR2(50) NOT NULL,
       phone_no    				    NUMBER 	UNIQUE NOT NULL,
       nationality 				    VARCHAR2(50) NOT NULL,
       gender				        VARCHAR2(50),
