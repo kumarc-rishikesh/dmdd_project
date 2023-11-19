@@ -109,10 +109,10 @@ CREATE TABLE AMENITY_BOOKING (
      utility_billing_id				NUMBER PRIMARY KEY,
      utility_name					VARCHAR2(50) NOT NULL,
      utility_cost					NUMBER NOT NULL,
-     unit_metric      	 			VARCHAR2(10) NOT NULL,
+     unit_metric      	 			VARCHAR2(50) NOT NULL,
      curr_cycle_units				NUMBER NOT NULL,
      cycle_billed_on				DATE NOT NULL,
-     LEASE_lease_id					NUMBER NOT NULL,
+     LEASE_lease_id					REFERENCES LEASE(lease_id) NOT NULL,
      CONSTRAINT check_utility_name CHECK (UPPER(utility_name) IN ('ELECTRICITY', 'WATER', 'GAS'))
    );
 
