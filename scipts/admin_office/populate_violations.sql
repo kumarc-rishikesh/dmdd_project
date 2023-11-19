@@ -11,6 +11,7 @@ BEGIN
     INSERT INTO VIOLATIONS (violation_id, LEASE_lease_id, penalty, type) VALUES (VIOLATION_ID_SEQ.NEXTVAL, 4, 120, 'Pet Policy Violation');
     INSERT INTO VIOLATIONS (violation_id, LEASE_lease_id, penalty, type) VALUES (VIOLATION_ID_SEQ.NEXTVAL, 5, 180, 'Damage to Property');
     DBMS_OUTPUT.PUT_LINE('Violations inserted successfully.');
+    COMMIT;
   END IF;
 END;
 /

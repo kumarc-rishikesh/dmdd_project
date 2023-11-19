@@ -137,7 +137,6 @@ CREATE TABLE SERVICE_REQUEST (
       request_id      				NUMBER PRIMARY KEY,
       LEASE_lease_id  				REFERENCES LEASE(lease_id) NOT NULL,
       type            				VARCHAR2(250) NOT NULL,
-      dept             				REFERENCES DEPARTMENT(dept_id) NOT NULL,
       status           				VARCHAR2(50),
       scheduled_for    				DATE,
       completed_at     				DATE,
@@ -148,7 +147,7 @@ CREATE TABLE SERVICE_REQUEST (
 CREATE SEQUENCE EMPLOYEE_ID_SEQ;
 CREATE TABLE EMPLOYEE (
       employee_id					NUMBER PRIMARY KEY,
-      employee_name                 VARCHAR2(50),
+      name                          VARCHAR2(50),
       phone_no						NUMBER NOT NULL,	
       gender						VARCHAR2(50),
       dob							DATE NOT NULL,

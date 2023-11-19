@@ -55,6 +55,7 @@ BEGIN
       TO_CHAR(ssn)
     );
   END LOOP;
+  COMMIT;
 END;
 /
 
