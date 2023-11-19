@@ -1,58 +1,3 @@
-/*DECLARE
-  TYPE owner_ids_type IS TABLE OF NUMBER INDEX BY BINARY_INTEGER;
-  owner_ids owner_ids_type;
-  start_date DATE;
-  end_date DATE;
-  room_no NUMBER;
-  TYPE unit_type_arr IS VARRAY(4) OF VARCHAR2(50);
-  unit_types unit_type_arr := unit_type_arr('1BHK', '2BHK', '3BHK', 'Studio');
-  rent NUMBER;
-  TYPE rent_status_arr IS VARRAY(3) OF VARCHAR2(50);
-  rent_statuses rent_status_arr := rent_status_arr('Paid', 'Unpaid', 'Late');
-  pending_dues NUMBER;
-  owner_count NUMBER;
-
-BEGIN
-  SELECT owner_id BULK COLLECT INTO owner_ids FROM OWNER;
-  owner_count := owner_ids.COUNT;
-
-  FOR i IN 1..50 LOOP
-    start_date := TO_DATE('01-JAN-2020', 'DD-MON-YYYY') + TRUNC(DBMS_RANDOM.VALUE(0, 365)); 
-    end_date := start_date + 365; 
-    room_no := TRUNC(DBMS_RANDOM.VALUE(100, 500));
-    rent := TRUNC(DBMS_RANDOM.VALUE(500, 3000)); 
-
-    INSERT INTO LEASE (
-      lease_id, 
-      start_date, 
-      end_date, 
-      room_no, 
-      unit_type, 
-      rent, 
-      rent_status, 
-      pending_dues, 
-      dues_last_cleared, 
-      pending_due_on, 
-      OWNER_owner_id
-    ) VALUES (
-      LEASE_ID_SEQ.NEXTVAL, 
-      start_date, 
-      end_date, 
-      room_no, 
-      unit_types(TRUNC(DBMS_RANDOM.VALUE(1, 4))),
-      rent, 
-      rent_statuses(TRUNC(DBMS_RANDOM.VALUE(1, 3))),
-      TRUNC(DBMS_RANDOM.VALUE(0, rent)),
-      NULL,
-      NULL, 
-      owner_ids(TRUNC(DBMS_RANDOM.VALUE(1, owner_count))) 
-    );
-  END LOOP;
-END;
-/
-*/
-
-
 -- For owner_id = 1
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id) 
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2020-01-01', 'YYYY-MM-DD'), TO_DATE('2020-12-31', 'YYYY-MM-DD'), 101, '1BHK', 1200, 'Paid', 1);
@@ -66,8 +11,6 @@ VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2020-02-01', 'YYYY-MM-DD'), TO_DATE('2020
 
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2021-02-01', 'YYYY-MM-DD'), TO_DATE('2021-08-31', 'YYYY-MM-DD'), 102, 'Studio', 1400, 'Paid', 2);
-
--- Continue this pattern for other owner_ids...
 
 -- For owner_id = 3
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
@@ -83,7 +26,6 @@ VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2020-04-01', 'YYYY-MM-DD'), TO_DATE('2020
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2021-04-01', 'YYYY-MM-DD'), TO_DATE('2021-10-31', 'YYYY-MM-DD'), 104, '3BHK', 1450, 'Paid', 4);
 
--- Continue this pattern for owner_id 5 to 25...
 -- For owner_id = 5
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2020-05-01', 'YYYY-MM-DD'), TO_DATE('2020-11-30', 'YYYY-MM-DD'), 105, '1BHK', 1100, 'Paid', 5);
