@@ -147,7 +147,7 @@ CREATE TABLE SERVICE_REQUEST (
 CREATE SEQUENCE EMPLOYEE_ID_SEQ;
 CREATE TABLE EMPLOYEE (
       employee_id					NUMBER PRIMARY KEY,
-      name                          VARCHAR2(50),
+      employee_name                          VARCHAR2(50),
       phone_no						NUMBER NOT NULL,	
       gender						VARCHAR2(50),
       dob							DATE NOT NULL,
