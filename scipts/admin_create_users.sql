@@ -31,30 +31,44 @@ BEGIN
   END LOOP;
 
   COMMIT; 
+    
+    BEGIN
+        EXECUTE IMMEDIATE 'CREATE ROLE leasing_office_role' ; 
+        EXECUTE IMMEDIATE 'GRANT CREATE TABLE TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT CONNECT TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT RESOURCE TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT CREATE SEQUENCE TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT CREATE VIEW TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT CREATE PROCEDURE TO leasing_office_role';
+        EXECUTE IMMEDIATE 'GRANT INSERT TO leasing_office_role';
+
+        DBMS_OUTPUT.PUT_LINE('Created role: leasing_office_role');
+
+        EXECUTE IMMEDIATE 'CREATE ROLE resident_role ';
+        EXECUTE IMMEDIATE 'GRANT CONNECT TO resident_role';
+        EXECUTE IMMEDIATE 'GRANT RESOURCE TO resident_role';
+        DBMS_OUTPUT.PUT_LINE('Created role: resident_role');
+        
+        EXECUTE IMMEDIATE 'CREATE ROLE maintenence_role '; 
+        EXECUTE IMMEDIATE 'GRANT CONNECT TO maintenence_role';
+        EXECUTE IMMEDIATE 'GRANT RESOURCE TO maintenence_role';
+        DBMS_OUTPUT.PUT_LINE('Created role: maintenence_role');        
+        
+        EXECUTE IMMEDIATE 'CREATE USER leasing_office IDENTIFIED BY "RootPassword123*"'; 
+        EXECUTE IMMEDIATE 'GRANT leasing_office_role TO leasing_office';
+        DBMS_OUTPUT.PUT_LINE('Created user: leasing_office');
+
+        EXECUTE IMMEDIATE 'CREATE USER resident IDENTIFIED BY "RootPassword123*"'; 
+        EXECUTE IMMEDIATE 'GRANT resident_role TO resident';
+        DBMS_OUTPUT.PUT_LINE('Created user: resident');
+
+        EXECUTE IMMEDIATE 'CREATE USER maintenence IDENTIFIED BY "RootPassword123*"'; 
+        EXECUTE IMMEDIATE 'GRANT maintenence_role TO maintenence';
+        DBMS_OUTPUT.PUT_LINE('Created user: maintainence');
+
+    EXCEPTION
+      WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('ERROR IN ROLE/USER CREATION : ' || SQLERRM );
+    END;
 END;
 /
-
-
-CREATE ROLE leasing_office_role ; 
-GRANT CREATE TABLE TO leasing_office_role;
-GRANT CONNECT TO leasing_office_role;
-GRANT RESOURCE TO leasing_office_role;
-GRANT CREATE SEQUENCE TO leasing_office_role;
-GRANT CREATE VIEW TO leasing_office_role;
-GRANT CREATE PROCEDURE TO leasing_office_role;
-
-CREATE ROLE resident_role ;
-GRANT CONNECT TO resident_role;
-GRANT RESOURCE TO resident_role;
-
-CREATE ROLE maintenence_role ; 
-GRANT CONNECT TO maintenence_role;
-GRANT RESOURCE TO maintenence_role;
-
-
-CREATE USER leasing_office IDENTIFIED BY "RootPassword123*"; 
-GRANT leasing_office_role TO leasing_office;
-CREATE USER resident IDENTIFIED BY "RootPassword123*"; 
-GRANT resident_role TO resident;
-CREATE USER maintenence IDENTIFIED BY "RootPassword123*"; 
-GRANT maintenence_role TO maintenence;
