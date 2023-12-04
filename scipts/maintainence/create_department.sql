@@ -5,7 +5,7 @@ CREATE OR REPLACE PROCEDURE onboard_department(
     DEPARTMENT_ALREADY_EXISTS EXCEPTION;
     PRAGMA EXCEPTION_INIT(DEPARTMENT_ALREADY_EXISTS, -1);
 BEGIN
-    INSERT INTO department (DEPT_ID, NAME) VALUES (p_dept_id, p_name);
+    INSERT INTO department (DEPT_ID, NAME) VALUES (p_dept_id, UPPER(p_name));
     COMMIT;
     DBMS_OUTPUT.PUT_LINE('Department onboarded successfully!');
 EXCEPTION

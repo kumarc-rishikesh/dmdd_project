@@ -1,52 +1,66 @@
-CREATE OR REPLACE PROCEDURE add_sr (
+CREATE OR REPLACE PROCEDURE add_sr(
     p_lease_id IN NUMBER,
-    p_name IN VARCHAR2,
-    p_dep1 IN NUMBER DEFAULT NULL,
-    p_dep2 IN NUMBER DEFAULT NULL,
-    p_dep3 IN NUMBER DEFAULT NULL)
-IS
-    v_dept_ids SYS.ODCINUMBERLIST := SYS.ODCINUMBERLIST();
-    v_request_id NUMBER;
-    ALL_NULL EXCEPTION;
-    SAME_DEPS EXCEPTION;
+    p_resident_name IN VARCHAR2,
+    p_service IN VARCHAR2
+) AS
+    v_resident_id NUMBER;
+    v_service_count NUMBER;
+
+    
+    RESIDENT_NOT_FOUND EXCEPTION;
+    SERVICE_NOT_FOUND EXCEPTION;
+    SERVICE_REQUEST_ALREADY_EXISTS EXCEPTION;
+
 BEGIN
-    IF p_dep1 IS NULL AND p_dep2 IS NULL AND p_dep3 IS NULL THEN
-        RAISE ALL_NULL;
+    SELECT RESIDENT_ID INTO v_resident_id
+    FROM resident
+    WHERE RESIDENT_NAME = UPPER(p_resident_name)
+      AND LEASE_LEASE_ID = p_lease_id;
+
+    SELECT COUNT(*) INTO v_service_count
+    FROM department
+    WHERE NAME = UPPER(p_service);
+
+    IF v_service_count = 0 THEN
+        RAISE SERVICE_NOT_FOUND;
     END IF;
 
-    IF p_dep1 IS NOT NULL THEN
-        v_dept_ids.EXTEND;
-        v_dept_ids(1) := p_dep1;
+    SELECT COUNT(*) INTO v_service_count
+    FROM service_request
+    WHERE LEASE_LEASE_ID = p_lease_id
+      AND TYPE = upper(p_service)
+      AND STATUS IS NOT NULL;
+
+    IF v_service_count > 0 THEN
+        RAISE SERVICE_REQUEST_ALREADY_EXISTS;
     END IF;
 
-    IF p_dep2 IS NOT NULL THEN
-        v_dept_ids.EXTEND;
-        v_dept_ids(2) := p_dep2;
-    END IF;
-
-    IF p_dep3 IS NOT NULL THEN
-        v_dept_ids.EXTEND;
-        v_dept_ids(3) := p_dep3;
-    END IF;
-
-    SELECT SERVICE_REQUEST_ID_SEQ.NEXTVAL INTO v_request_id FROM DUAL;
-    INSERT INTO SERVICE_REQUEST (request_id, LEASE_lease_id, type, status, scheduled_for,resident_name)
-    VALUES (v_request_id, p_lease_id, 'resident_raised', 'open' , SYSDATE+5 ,p_name);
-
-    FOR i IN 1..v_dept_ids.COUNT LOOP
-        INSERT INTO SR_DEPT (sr_dept_id, DEPARTMENT_dept_id, SERVICE_REQUEST_request_id)
-        VALUES (SR_DEPT_ID_SEQ.NEXTVAL, v_dept_ids(i), v_request_id);
-        DBMS_OUTPUT.PUT_LINE('Data inserted successfully.');
-    END LOOP;
+    INSERT INTO service_request (request_id,
+        LEASE_LEASE_ID,
+        TYPE,
+        SCHEDULED_FOR,
+        RESIDENT_NAME,
+        STATUS
+    ) VALUES (SERVICE_REQUEST_ID_SEQ.NEXTVAL,
+        p_lease_id,
+        UPPER(p_service),
+        NULL,
+        UPPER(p_resident_name),
+        'NOT ASSIGNED'
+    );
 
     COMMIT;
+    DBMS_OUTPUT.PUT_LINE('Service request raised successfully!');
 EXCEPTION
-    WHEN ALL_NULL THEN
-        DBMS_OUTPUT.PUT_LINE('ALL 3 DEPARTMENTS ARE NULL');
-    WHEN SAME_DEPS THEN
-        DBMS_OUTPUT.PUT_LINE('DEPARTMENTS MUST BE DISTINCT');
+    WHEN NO_DATA_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Resident not found. Please provide a valid lease ID and resident name.');
+    WHEN TOO_MANY_ROWS THEN
+        DBMS_OUTPUT.PUT_LINE('Multiple residents found. Please provide a more specific Details.');
+    WHEN SERVICE_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Service not found. Please provide a valid service name.');
+    WHEN SERVICE_REQUEST_ALREADY_EXISTS THEN
+        DBMS_OUTPUT.PUT_LINE('Service request already exists for this resident and service.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-        ROLLBACK;
+        DBMS_OUTPUT.PUT_LINE('Invalid Input Data');
 END add_sr;
 /
