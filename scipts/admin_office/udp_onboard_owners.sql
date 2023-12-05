@@ -1,4 +1,5 @@
 CREATE OR REPLACE PROCEDURE ONBOARD_OWNER(
+    PI_OWNER_ID OWNER.OWNER_ID%TYPE,
     PI_OWNER_NAME OWNER.OWNER_NAME%TYPE,
     PI_PHONE_NO OWNER.PHONE_NO%TYPE,
     PI_NATIONALITY OWNER.NATIONALITY%TYPE,
@@ -7,37 +8,50 @@ CREATE OR REPLACE PROCEDURE ONBOARD_OWNER(
     PI_SSN OWNER.SSN%TYPE
 )
 AS
-    v_ssn_check VARCHAR2(9) := 'xxxxxxxxx';  -- Placeholder for SSN check
+    v_owner_count NUMBER;
+    v_ssn_count NUMBER;
+    v_new_owner_id OWNER.OWNER_ID%TYPE;
     E_SSN_ALREADY_EXISTS EXCEPTION;
 BEGIN
-    -- Check for SSN
-    BEGIN 
-        SELECT ssn INTO v_ssn_check
-        FROM OWNER
-        WHERE ssn = PI_SSN;
+    SELECT COUNT(*)
+    INTO v_owner_count
+    FROM OWNER
+    WHERE OWNER_ID = PI_OWNER_ID;
 
+    IF v_owner_count = 0 THEN
+        v_new_owner_id := PI_OWNER_ID;
+    ELSE
+        SELECT OWNER_ID_SEQ.NEXTVAL INTO v_new_owner_id FROM DUAL;
+    END IF;
+
+    SELECT COUNT(*)
+    INTO v_ssn_count
+    FROM OWNER
+    WHERE SSN = PI_SSN;
+
+    IF v_ssn_count > 0 THEN
         RAISE E_SSN_ALREADY_EXISTS;
-    EXCEPTION
-        WHEN NO_DATA_FOUND THEN    
-            -- Insert the owner if SSN is not found
-            INSERT INTO OWNER (
-                OWNER_ID, OWNER_NAME, PHONE_NO, NATIONALITY, GENDER, DOB, SSN
-            ) VALUES (
-                OWNER_ID_SEQ.NEXTVAL, PI_OWNER_NAME, PI_PHONE_NO, PI_NATIONALITY,
-                PI_GENDER, PI_DOB, PI_SSN
-            );
-            COMMIT;
-    END;
+    END IF;
 
+    INSERT INTO OWNER (
+        OWNER_ID, OWNER_NAME, PHONE_NO, NATIONALITY, GENDER, DOB, SSN
+    ) VALUES (
+        v_new_owner_id, PI_OWNER_NAME, PI_PHONE_NO, PI_NATIONALITY,
+        PI_GENDER, PI_DOB, PI_SSN
+    );
+
+    COMMIT;
 EXCEPTION
     WHEN E_SSN_ALREADY_EXISTS THEN
-        DBMS_OUTPUT.PUT_LINE('PLEASE ENTER A UNIQUE SSN');
+        DBMS_OUTPUT.PUT_LINE('Error: SSN already in use.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE(SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END ONBOARD_OWNER;
 /
 
-EXECUTE ONBOARD_OWNER('Test', 1234567890, 'American', 'Male', TO_DATE('1990-01-01', 'YYYY-MM-DD'), '123456789');
+
+
+EXEC ONBOARD_OWNER(1, 'John Doe', 1234567890, 'American', 'Male', TO_DATE('1980-01-01', 'YYYY-MM-DD'), '123456789');
 
 
 SELECT * FROM OWNER WHERE SSN = '123456789';
