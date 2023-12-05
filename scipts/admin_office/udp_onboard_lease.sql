@@ -1,3 +1,4 @@
+--TODO:check if the owner exists
 CREATE OR REPLACE PROCEDURE ADD_NEW_LEASE(
     PI_START_DATE DATE,
     PI_END_DATE DATE,
@@ -13,7 +14,6 @@ AS
     v_lease_count NUMBER;
     E_ROOM_ALREADY_LEASED EXCEPTION;
 BEGIN
-    -- Check if the room is already leased during the given period
     SELECT COUNT(*)
     INTO v_lease_count
     FROM LEASE
