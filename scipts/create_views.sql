@@ -15,6 +15,7 @@ GROUP BY
 ORDER BY
     a.amenity_id,
     booking_hour;
+
 -- View for Residents to view all Service Requests
 CREATE OR REPLACE VIEW RESIDENT_SR AS 
 SELECT
@@ -28,20 +29,3 @@ FROM
     service_request
 WHERE
     completed_at IS NULL;
--- View for Maintainence to view all Service Requests Ongoing
-CREATE OR REPLACE VIEW assignments AS
-SELECT
-    REQUEST_ID,
-    EMPLOYEE_NAME,
-    DEPT_ID,
-    TYPE
-FROM (
-    SELECT
-        REQUEST_ID,
-        TYPE,
-        SUBSTR(STATUS, INSTR(STATUS, 'ASSIGNED TO') + LENGTH('ASSIGNED TO') + 1) AS EMPLOYEE_NAME
-    FROM SERVICE_REQUEST
-    WHERE STATUS LIKE 'ASSIGNED TO%'
-) ASSIGNED_REQUESTS
-JOIN DEPARTMENT ON ASSIGNED_REQUESTS.TYPE = DEPARTMENT.NAME;
-    

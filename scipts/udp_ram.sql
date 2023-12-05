@@ -31,7 +31,7 @@ BEGIN
     FROM service_request
     WHERE LEASE_LEASE_ID = p_lease_id
       AND TYPE = upper(p_service)
-      AND STATUS IS NOT NULL;
+      AND STATUS LIKE 'ASSIGNED TO%';
 
     IF v_service_count > 0 THEN
         RAISE SERVICE_REQUEST_ALREADY_EXISTS;
@@ -145,15 +145,13 @@ END onboard_department;
 -- 4. close sr proc
 
 CREATE OR REPLACE PROCEDURE close_sr(p_request_id IN NUMBER) AS
-    v_status VARCHAR2(50):= 'COMPLETED';
     v_exists VARCHAR2(1) := 'N';
     NOT_FOUND EXCEPTION;
 BEGIN
 SELECT 'Y' INTO v_exists FROM SERVICE_REQUEST WHERE REQUEST_ID = p_request_id;
 IF v_exists = 'Y' THEN
     UPDATE SERVICE_REQUEST
-    SET STATUS = UPPER(v_status),
-    COMPLETED_AT = SYSDATE
+    SET COMPLETED_AT = SYSDATE
     WHERE REQUEST_ID = p_request_id;
     COMMIT;
     ELSE
@@ -289,8 +287,10 @@ BEGIN
 
     IF V_RANDOM_EMPLOYEE_NAME IS NOT NULL THEN
         :NEW.STATUS := UPPER('Assigned to ' || V_RANDOM_EMPLOYEE_NAME);
+        :NEW.SCHEDULED_FOR := SYSDATE + 1; -- Set scheduled_for to SYSDATE + 1
     ELSE
         :NEW.STATUS := 'Not Assigned (No Employee in Department)';
+        :NEW.SCHEDULED_FOR := NULL; -- Set scheduled_for to NULL
     END IF;
 END before_sr_insert;
 /
