@@ -231,7 +231,7 @@ VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2022-01-15', 'YYYY-MM-DD'), TO_DATE('2023
 
 -- For owner_id=26(active lease)
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
-VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2023-01-15', 'YYYY-MM-DD'), TO_DATE('2022-01-14', 'YYYY-MM-DD'), 149, '2BHK', 1380, 'Paid', 26);
+VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2023-01-15', 'YYYY-MM-DD'), TO_DATE('2024-01-14', 'YYYY-MM-DD'), 149, '2BHK', 1380, 'Paid', 26);
 
 
 COMMIT;
