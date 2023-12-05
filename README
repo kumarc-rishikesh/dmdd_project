@@ -1,2 +1,14 @@
 DAMG 6210 project
 Apartment Maintainence on Oracle DB
+
+How to Run Scripts
+1. run admin_create_users.sql
+2. run create_tables.sql
+3. run create_views.sql
+4. run udp_rishi.sql
+5. run udp_ram.sql
+6. run udp_pranav.sql
+7. run create_reports.sql
+8. run admin_grant_user_permissions.sql
+9. run populate_tables
+10. additional tests
