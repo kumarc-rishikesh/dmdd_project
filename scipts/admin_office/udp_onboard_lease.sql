@@ -1,5 +1,5 @@
---TODO:check if the owner exists
 CREATE OR REPLACE PROCEDURE ADD_NEW_LEASE(
+    PI_OWNER_ID OWNER.OWNER_ID%TYPE,
     PI_START_DATE DATE,
     PI_END_DATE DATE,
     PI_ROOM_NO VARCHAR2,
@@ -12,8 +12,21 @@ CREATE OR REPLACE PROCEDURE ADD_NEW_LEASE(
 )
 AS
     v_lease_count NUMBER;
+    v_owner_count NUMBER;
     E_ROOM_ALREADY_LEASED EXCEPTION;
+    E_OWNER_NOT_FOUND EXCEPTION;
 BEGIN
+    -- Check if the owner exists
+    SELECT COUNT(*)
+    INTO v_owner_count
+    FROM OWNER
+    WHERE OWNER_ID = PI_OWNER_ID;
+
+    IF v_owner_count = 0 THEN
+        RAISE E_OWNER_NOT_FOUND;
+    END IF;
+
+    -- Check if the room is already leased
     SELECT COUNT(*)
     INTO v_lease_count
     FROM LEASE
@@ -27,10 +40,10 @@ BEGIN
     ELSE
         -- Insert the new lease
         INSERT INTO LEASE (
-            LEASE_ID, START_DATE, END_DATE, ROOM_NO, UNIT_TYPE, RENT, 
+            LEASE_ID, OWNER_OWNER_ID, START_DATE, END_DATE, ROOM_NO, UNIT_TYPE, RENT, 
             RENT_STATUS, PENDING_DUES, DUES_LAST_CLEARED, PENDING_DUE_ON
         ) VALUES (
-            LEASE_ID_SEQ.NEXTVAL, PI_START_DATE, PI_END_DATE, PI_ROOM_NO, 
+            LEASE_ID_SEQ.NEXTVAL, PI_OWNER_ID, PI_START_DATE, PI_END_DATE, PI_ROOM_NO, 
             PI_UNIT_TYPE, PI_RENT, PI_RENT_STATUS, PI_PENDING_DUES, 
             PI_DUES_LAST_CLEARED, PI_PENDING_DUE_ON
         );
@@ -40,11 +53,14 @@ BEGIN
 EXCEPTION
     WHEN E_ROOM_ALREADY_LEASED THEN
         DBMS_OUTPUT.PUT_LINE('The room is already leased for the specified period.');
+    WHEN E_OWNER_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Owner ID not found.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Oops! ' || SQLERRM);
 END ADD_NEW_LEASE;
 /
 
-EXEC ADD_NEW_LEASE(TO_DATE('2023-10-04', 'YYYY-MM-DD'), TO_DATE('2023-10-04', 'YYYY-MM-DD'), '101', '2BHK', 1500, 'Not Paid', 0, NULL, TO_DATE('2023-11-04', 'YYYY-MM-DD'));
+
+EXEC ADD_NEW_LEASE(1, TO_DATE('2023-10-04', 'YYYY-MM-DD'), TO_DATE('2023-10-04', 'YYYY-MM-DD'), '101', '2BHK', 1500, 'Not Paid', 0, NULL, TO_DATE('2023-11-04', 'YYYY-MM-DD'));
 
 

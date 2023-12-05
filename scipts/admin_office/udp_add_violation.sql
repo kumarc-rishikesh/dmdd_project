@@ -55,7 +55,7 @@ EXCEPTION
     WHEN E_NULL_PENALTY THEN
         DBMS_OUTPUT.PUT_LINE('Error: Penalty cannot be null.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Oops! ' || SQLERRM);
 END add_violation;
 /
 

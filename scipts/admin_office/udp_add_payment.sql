@@ -4,7 +4,10 @@ CREATE OR REPLACE PROCEDURE add_payment(
 )
 AS
     v_lease_count NUMBER;
+    v_rent_status VARCHAR2(100);
+    v_pending_dues NUMBER;
     E_LEASE_NOT_FOUND EXCEPTION;
+    E_NOTHING_TO_PAY EXCEPTION;
 BEGIN
     SELECT COUNT(*)
     INTO v_lease_count
@@ -13,6 +16,15 @@ BEGIN
 
     IF v_lease_count = 0 THEN
         RAISE E_LEASE_NOT_FOUND;
+    END IF;
+
+    SELECT RENT_STATUS, PENDING_DUES
+    INTO v_rent_status, v_pending_dues
+    FROM LEASE
+    WHERE LEASE_ID = PI_LEASE_ID;
+
+    IF v_rent_status = 'Paid' AND v_pending_dues < 1 THEN
+        RAISE E_NOTHING_TO_PAY;
     END IF;
 
     UPDATE LEASE
@@ -27,10 +39,13 @@ BEGIN
 EXCEPTION
     WHEN E_LEASE_NOT_FOUND THEN
         DBMS_OUTPUT.PUT_LINE('Error: Lease ID not found.');
+    WHEN E_NOTHING_TO_PAY THEN
+        DBMS_OUTPUT.PUT_LINE('Error: There is nothing to be paid.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+        DBMS_OUTPUT.PUT_LINE('Oops! ' || SQLERRM);
 END add_payment;
 /
+
 
 
 select * from lease where lease_id=51;
