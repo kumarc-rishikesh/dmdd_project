@@ -1,0 +1,26 @@
+SET SERVEROUTPUT ON
+CREATE OR REPLACE PROCEDURE add_payment(
+    PI_LEASE_ID LEASE.LEASE_ID%TYPE,
+    PI_DUES_LAST_CLEARED DATE DEFAULT SYSDATE
+)
+AS
+BEGIN
+    UPDATE LEASE
+    SET 
+        RENT_STATUS = 'Paid',
+        PENDING_DUES = 0,
+        DUES_LAST_CLEARED = PI_DUES_LAST_CLEARED,
+        PENDING_DUE_ON = ADD_MONTHS(PENDING_DUE_ON, 1)
+    WHERE LEASE_ID = PI_LEASE_ID;
+
+    COMMIT;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+END add_payment;
+/
+
+select * from lease where lease_id=51;
+EXEC add_payment(51);
+select * from lease where lease_id=51;
+

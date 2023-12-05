@@ -1,5 +1,4 @@
--- Check if the penalty is not null and update pending dues accordingly
--- If pending dues are not null, add the penalty to the existing amount and update rent status
+--Checks performed: Is the lease active? Is the penalty null? Is the current pending dues null?
                 
                 
 SET SERVEROUTPUT ON
