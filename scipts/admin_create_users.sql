@@ -33,6 +33,15 @@ BEGIN
   COMMIT; 
     
     BEGIN
+        EXECUTE IMMEDIATE 'CREATE USER it_admin IDENTIFIED BY "RootPassword123*"'; 
+        EXECUTE IMMEDIATE 'GRANT CREATE TABLE TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT CONNECT TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT RESOURCE TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT UNLIMITED TABLESPACE TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT CREATE SEQUENCE TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT CREATE VIEW TO it_admin';
+        EXECUTE IMMEDIATE 'GRANT CREATE PROCEDURE TO it_admin';
+        
         EXECUTE IMMEDIATE 'CREATE ROLE leasing_office_role' ; 
         EXECUTE IMMEDIATE 'GRANT CREATE TABLE TO leasing_office_role';
         EXECUTE IMMEDIATE 'GRANT CONNECT TO leasing_office_role';
@@ -40,7 +49,6 @@ BEGIN
         EXECUTE IMMEDIATE 'GRANT CREATE SEQUENCE TO leasing_office_role';
         EXECUTE IMMEDIATE 'GRANT CREATE VIEW TO leasing_office_role';
         EXECUTE IMMEDIATE 'GRANT CREATE PROCEDURE TO leasing_office_role';
-        EXECUTE IMMEDIATE 'GRANT INSERT TO leasing_office_role';
 
         DBMS_OUTPUT.PUT_LINE('Created role: leasing_office_role');
 
