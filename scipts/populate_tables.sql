@@ -33,7 +33,7 @@ BEGIN
 
 
 
-  FOR i IN 1..25 LOOP
+  FOR i IN 1..26 LOOP
     birth_date := TO_DATE('01-JAN-1940', 'DD-MON-YYYY') + DBMS_RANDOM.VALUE(0, 23741);     
     ssn := TRUNC(DBMS_RANDOM.VALUE(100000000, 999999999));
     random_phone := TO_CHAR(TRUNC(DBMS_RANDOM.VALUE(1000000000, 9999999999)));
@@ -228,6 +228,11 @@ INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, ren
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2021-01-15', 'YYYY-MM-DD'), TO_DATE('2022-01-14', 'YYYY-MM-DD'), 149, '2BHK', 1380, 'Paid', 25);
 INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
 VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2022-01-15', 'YYYY-MM-DD'), TO_DATE('2023-01-14', 'YYYY-MM-DD'), 150, '2BHK', 1540, 'Unpaid', 25);
+
+-- For owner_id=26(active lease)
+INSERT INTO LEASE (lease_id, start_date, end_date, room_no, unit_type, rent, rent_status, OWNER_owner_id)
+VALUES (LEASE_ID_SEQ.NEXTVAL, TO_DATE('2023-01-15', 'YYYY-MM-DD'), TO_DATE('2024-01-14', 'YYYY-MM-DD'), 149, '2BHK', 1380, 'Paid', 26);
+
 
 COMMIT;
 
