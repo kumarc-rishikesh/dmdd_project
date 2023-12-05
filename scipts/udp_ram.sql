@@ -289,8 +289,10 @@ BEGIN
 
     IF V_RANDOM_EMPLOYEE_NAME IS NOT NULL THEN
         :NEW.STATUS := UPPER('Assigned to ' || V_RANDOM_EMPLOYEE_NAME);
+        :NEW.SCHEDULED_FOR := SYSDATE + 1; -- Set scheduled_for to SYSDATE + 1
     ELSE
         :NEW.STATUS := 'Not Assigned (No Employee in Department)';
+        :NEW.SCHEDULED_FOR := NULL; -- Set scheduled_for to NULL
     END IF;
 END before_sr_insert;
 /
