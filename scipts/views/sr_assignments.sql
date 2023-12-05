@@ -1,15 +1,12 @@
-CREATE VIEW assignments AS
+CREATE OR REPLACE VIEW RESIDENT_SR AS 
 SELECT
-    REQUEST_ID,
-    EMPLOYEE_NAME,
-    DEPT_ID,
-    TYPE
-FROM (
-    SELECT
-        REQUEST_ID,
-        TYPE,
-        SUBSTR(STATUS, INSTR(STATUS, 'ASSIGNED TO') + LENGTH('ASSIGNED TO') + 1) AS EMPLOYEE_NAME
-    FROM SERVICE_REQUEST
-    WHERE STATUS LIKE 'ASSIGNED TO%'
-) ASSIGNED_REQUESTS
-JOIN DEPARTMENT ON ASSIGNED_REQUESTS.TYPE = DEPARTMENT.NAME;
+    request_id,
+    resident_name,
+    type,
+    status,
+    NVL(TO_CHAR(scheduled_for, 'YYYY-MM-DD'), 'TBA') AS scheduled_for,
+    NVL(TO_CHAR(completed_at, 'YYYY-MM-DD'), 'TBA') AS completed_at
+FROM
+    service_request
+WHERE
+    completed_at IS NULL;
