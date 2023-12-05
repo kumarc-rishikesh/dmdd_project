@@ -67,6 +67,10 @@ EXCEPTION
 END add_sr;
 /
 
+--EXEC add_sr(99, 'NonExistentResident', 'Plumbing');
+--EXEC add_sr(1, 'Liam', 'NonExistentService');
+--EXEC add_sr(1, 'Liam', 'Plumbing');   
+
 -- 2. onboard employee proc
 
 CREATE OR REPLACE PROCEDURE onboard_employee(
@@ -79,24 +83,35 @@ CREATE OR REPLACE PROCEDURE onboard_employee(
     p_department_dept_id IN NUMBER
 ) AS
     EMPLOYEE_ALREADY_EXISTS EXCEPTION;
-    PRAGMA EXCEPTION_INIT(EMPLOYEE_ALREADY_EXISTS, -1);
+    employee_exists NUMBER;
 BEGIN
-    INSERT INTO employee (
-        EMPLOYEE_ID, EMPLOYEE_NAME, PHONE_NO, GENDER, DOB, DOJ, TERMINATION_DATE, SALARY, SSN, DEPARTMENT_DEPT_ID
-    ) VALUES (
-        EMPLOYEE_ID_SEQ.NEXTVAL, p_employee_name, p_phone_no, p_gender, p_dob, SYSDATE, NULL, p_salary, p_ssn, p_department_dept_id
-    );
-    
-    COMMIT;
-    DBMS_OUTPUT.PUT_LINE('Employee onboarded successfully!');
+    SELECT COUNT(*)
+    INTO employee_exists
+    FROM employee
+    WHERE SSN = p_ssn;
+    IF employee_exists > 0 THEN
+        RAISE EMPLOYEE_ALREADY_EXISTS;
+    ELSE
+        INSERT INTO employee (
+            EMPLOYEE_ID, EMPLOYEE_NAME, PHONE_NO, GENDER, DOB, DOJ, TERMINATION_DATE, SALARY, SSN, DEPARTMENT_DEPT_ID
+        ) VALUES (
+            EMPLOYEE_ID_SEQ.NEXTVAL, p_employee_name, p_phone_no, p_gender, p_dob, SYSDATE, NULL, p_salary, p_ssn, p_department_dept_id
+        );
+
+        COMMIT;
+        DBMS_OUTPUT.PUT_LINE('Employee onboarded successfully!');
+    END IF;
 EXCEPTION
-    WHEN DUP_VAL_ON_INDEX THEN
-        DBMS_OUTPUT.PUT_LINE('Employee already exists. Employee ID must be unique.');
+    WHEN EMPLOYEE_ALREADY_EXISTS THEN
+        DBMS_OUTPUT.PUT_LINE('Employee already exists.');
     WHEN OTHERS THEN
-        DBMS_OUTPUT.PUT_LINE('Invalid');
+        DBMS_OUTPUT.PUT_LINE('Oops!'||SUBSTR(SQLERRM, 11));
 END onboard_employee;
 /
-
+    
+-- Employee already exists
+--EXEC onboard_employee('John Doe', 1234567890, 'Male', TO_DATE('15-JAN-90', 'DD-MON-YY'), 50000, '123-45-6789', 1);
+    
 -- 3. create department
 
 CREATE OR REPLACE PROCEDURE onboard_department(
@@ -104,19 +119,29 @@ CREATE OR REPLACE PROCEDURE onboard_department(
     p_name IN VARCHAR2
 ) AS
     DEPARTMENT_ALREADY_EXISTS EXCEPTION;
-    PRAGMA EXCEPTION_INIT(DEPARTMENT_ALREADY_EXISTS, -1);
+
+    department_exists NUMBER;
 BEGIN
-    INSERT INTO department (DEPT_ID, NAME) VALUES (p_dept_id, UPPER(p_name));
-    COMMIT;
-    DBMS_OUTPUT.PUT_LINE('Department onboarded successfully!');
+    SELECT COUNT(*)
+    INTO department_exists
+    FROM department
+    WHERE DEPT_ID = p_dept_id and name = UPPER(p_name);
+    IF department_exists > 0 THEN
+        RAISE DEPARTMENT_ALREADY_EXISTS;
+    ELSE
+        INSERT INTO department (DEPT_ID, NAME)
+        VALUES (p_dept_id, UPPER(p_name));
+        COMMIT;
+        DBMS_OUTPUT.PUT_LINE('Department onboarded successfully!');
+    END IF;
 EXCEPTION
-    WHEN DUP_VAL_ON_INDEX THEN
-        DBMS_OUTPUT.PUT_LINE('Department already exists. Department ID must be unique.');
+    WHEN DEPARTMENT_ALREADY_EXISTS THEN
+        DBMS_OUTPUT.PUT_LINE('Department already exists.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Invalid');
 END onboard_department;
-/ 
-
+/
+--EXEC onboard_department(1, 'Electric');
 -- 4. close sr proc
 
 CREATE OR REPLACE PROCEDURE close_sr(p_request_id IN NUMBER) AS
@@ -142,11 +167,14 @@ WHEN OTHERS THEN
 END close_sr;
 /
 
+--EXEC CLOSE_SR(999);    
+    
+
 -- 7. schedule emp proc
 
 CREATE OR REPLACE PROCEDURE schedule_emp(
     p_req_id IN NUMBER, 
-    p_emp_id IN VARCHAR2
+    p_emp_id IN NUMBER
 ) AS
     V_EXISTS_REQ VARCHAR2(1) := 'N';
     V_DEPT_REQ NUMBER;
@@ -155,46 +183,48 @@ CREATE OR REPLACE PROCEDURE schedule_emp(
     SERVICE_REQUEST_NOT_FOUND EXCEPTION;
     DEPARTMENT_NOT_FOUND EXCEPTION;
     EMPLOYEE_NOT_FOUND EXCEPTION;
-
+    
 BEGIN
-    SELECT 'Y' INTO V_EXISTS_REQ FROM SERVICE_REQUEST WHERE REQUEST_ID = p_req_id;
-    IF V_EXISTS_REQ = 'N' THEN
+    SELECT count(*) into v_exists_req FROM SERVICE_REQUEST WHERE REQUEST_ID = p_req_id;
+    IF V_EXISTS_REQ = 0 THEN
         RAISE SERVICE_REQUEST_NOT_FOUND;
-    END IF;
-
+    END IF;    
+        
     SELECT D.DEPT_ID INTO V_DEPT_REQ FROM SERVICE_REQUEST S JOIN DEPARTMENT D ON S.TYPE = D.NAME WHERE REQUEST_ID = P_REQ_ID;
     IF V_DEPT_REQ IS NULL THEN
-        RAISE DEPARTMENT_NOT_FOUND;
+        RAISE  DEPARTMENT_NOT_FOUND;
     END IF;
 
-    SELECT employee_NAME INTO V_name FROM EMPLOYEE WHERE EMPLOYEE_ID = p_emp_id AND DEPARTMENT_DEPT_ID = V_DEPT_REQ;
-    IF V_name IS NULL THEN
+    IF V_DEPT_REQ IS NOT NULL THEN
+        SELECT employee_NAME INTO v_name FROM EMPLOYEE WHERE EMPLOYEE_ID = p_emp_id AND DEPARTMENT_DEPT_ID = V_DEPT_REQ;
+    ELSE
         RAISE EMPLOYEE_NOT_FOUND;
     END IF;
 
-
-    IF V_EXISTS_REQ = 'Y' THEN
-        UPDATE SERVICE_REQUEST SET 
-        STATUS = UPPER('Assigned to ' || V_name),
-        SCHEDULED_FOR = SYSDATE,
-        COMPLETED_AT = NULL
-        WHERE REQUEST_ID = p_req_id;
-    
-        DBMS_OUTPUT.PUT_LINE('Assigned to ' || V_name || ' Successfully');
+    IF V_EXISTS_REQ = 'Y' AND v_name IS NOT NULL AND V_DEPT_REQ IS NOT NULL THEN
+    UPDATE SERVICE_REQUEST SET 
+    STATUS = UPPER('Assigned to ' || V_name),
+    SCHEDULED_FOR = SYSDATE,
+    COMPLETED_AT = NULL
+    WHERE REQUEST_ID = p_req_id;
+    DBMS_OUTPUT.PUT_LINE('Assigned to ' || v_name || ' Successfully');
     END IF;
     
-    EXCEPTION
-        WHEN SERVICE_REQUEST_NOT_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE(' Service request not found.');
-        WHEN DEPARTMENT_NOT_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE(' Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper department.');
-        WHEN EMPLOYEE_NOT_FOUND THEN
-            DBMS_OUTPUT.PUT_LINE(' Employee not found in the specified department.');
-        WHEN OTHERS THEN
-            DBMS_OUTPUT.PUT_LINE('Oops!'||SUBSTR(SQLERRM, 11));
-            DBMS_OUTPUT.PUT_LINE('Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper employee of respective department.');
+EXCEPTION
+    WHEN SERVICE_REQUEST_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE(' Service request not found.');
+    WHEN DEPARTMENT_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE(' Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper department.');
+    WHEN EMPLOYEE_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE(' Employee not found in the specified department.');
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Oops!'||SUBSTR(SQLERRM, 11));
+        DBMS_OUTPUT.PUT_LINE('Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper employee of respective department.');
 END schedule_emp;
 /
+
+--EXEC schedule_emp(999, '8888');
+--EXEC schedule_emp(1,5);
 
 -- 5. fire emp proc
 
@@ -264,5 +294,7 @@ BEGIN
     END IF;
 END before_sr_insert;
 /
+
+
 
 
