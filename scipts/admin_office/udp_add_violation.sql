@@ -9,47 +9,31 @@ CREATE OR REPLACE PROCEDURE add_violation(
 )
 AS
     v_current_pending_dues NUMBER;
-    v_current_pending_due_on DATE;
-    v_lease_end_date DATE;
-    E_LEASE_NOT_ACTIVE EXCEPTION;
+    v_lease_count NUMBER;
+    E_LEASE_NOT_FOUND EXCEPTION;
+    E_NO_PENDING_DUES EXCEPTION;
 BEGIN
-    SELECT PENDING_DUES, PENDING_DUE_ON, END_DATE INTO v_current_pending_dues, v_current_pending_due_on, v_lease_end_date
+    SELECT COUNT(*)
+    INTO v_lease_count
     FROM LEASE
     WHERE LEASE_ID = PI_LEASE_ID;
 
-    IF v_lease_end_date < SYSDATE THEN
-        RAISE E_LEASE_NOT_ACTIVE;
+    IF v_lease_count = 0 THEN
+        RAISE E_LEASE_NOT_FOUND;
     END IF;
 
-    INSERT INTO VIOLATIONS (
-        VIOLATION_ID, LEASE_LEASE_ID, PENALTY, TYPE
-    ) VALUES (
-        violation_id_seq.NEXTVAL, PI_LEASE_ID, PI_PENALTY, PI_TYPE
-    );
+    SELECT PENDING_DUES INTO v_current_pending_dues FROM LEASE WHERE LEASE_ID = PI_LEASE_ID;
 
-   
-
-    IF PI_PENALTY IS NOT NULL THEN
-        IF v_current_pending_dues IS NULL THEN
-            -- If pending dues are null, set it to the penalty and update rent status
-            UPDATE LEASE SET PENDING_DUES = PI_PENALTY, RENT_STATUS = 'Unpaid', DUES_LAST_CLEARED = SYSDATE WHERE LEASE_ID = PI_LEASE_ID;
-        ELSE
-            UPDATE LEASE SET PENDING_DUES = PENDING_DUES + PI_PENALTY, RENT_STATUS = 'Unpaid', DUES_LAST_CLEARED = SYSDATE WHERE LEASE_ID = PI_LEASE_ID;
-        END IF;
-        
-        IF v_current_pending_due_on IS NULL THEN
-            UPDATE LEASE SET PENDING_DUE_ON = ADD_MONTHS(SYSDATE, 1) WHERE LEASE_ID = PI_LEASE_ID;
-        ELSE
-            UPDATE LEASE SET PENDING_DUE_ON = ADD_MONTHS(v_current_pending_due_on, 1) WHERE LEASE_ID = PI_LEASE_ID;
-        END IF;
+    IF v_current_pending_dues = 0 THEN
+        RAISE E_NO_PENDING_DUES;
     END IF;
 
-    COMMIT;
+
 EXCEPTION
-    WHEN E_LEASE_NOT_ACTIVE THEN
-        DBMS_OUTPUT.PUT_LINE('Lease is not active.');
-    WHEN NO_DATA_FOUND THEN
-        DBMS_OUTPUT.PUT_LINE('Lease ID not found.');
+    WHEN E_LEASE_NOT_FOUND THEN
+        DBMS_OUTPUT.PUT_LINE('Error: Lease ID not found.');
+    WHEN E_NO_PENDING_DUES THEN
+        DBMS_OUTPUT.PUT_LINE('Error: No pending dues for this lease.');
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
 END add_violation;
@@ -58,9 +42,9 @@ END add_violation;
 
 
 
-EXEC ADD_VIOLATION('51', 500, 'Pet');
+EXEC ADD_VIOLATION('591', 500, 'Pet');
 --select * from violations where lease_lease_id=51;
---select * from lease where lease_id=51;
+select * from lease where lease_id=51;
 
 --SELECT lease_id, start_date, end_date
 --FROM LEASE
