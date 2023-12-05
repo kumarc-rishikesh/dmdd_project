@@ -63,6 +63,7 @@ GROUP BY
 
 -- Employee Productivity Report
 -- This report shows the productivity of each employee.
+CREATE OR REPLACE VIEW Employee_Performance_Report AS
 SELECT
     E.EMPLOYEE_ID,
     E.EMPLOYEE_NAME,
