@@ -153,5 +153,5 @@ CREATE TABLE EMPLOYEE (
       termination_date				DATE,
       salary						NUMBER NOT NULL,
       SSN							VARCHAR2(50),
-      DEPARTENT_dept_id				REFERENCES DEPARTMENT(dept_id) NOT NULL
+      DEPARTMENT_dept_id			REFERENCES DEPARTMENT(dept_id) NOT NULL
     );
