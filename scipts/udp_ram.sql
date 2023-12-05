@@ -31,7 +31,7 @@ BEGIN
     FROM service_request
     WHERE LEASE_LEASE_ID = p_lease_id
       AND TYPE = upper(p_service)
-      AND STATUS IS NOT NULL;
+      AND SCHEDULED_FOR IS NOT NULL;
 
     IF v_service_count > 0 THEN
         RAISE SERVICE_REQUEST_ALREADY_EXISTS;
