@@ -22,7 +22,7 @@ BEGIN
         RAISE DEPARTMENT_NOT_FOUND;
     END IF;
 
-    SELECT NAME INTO V_name FROM EMPLOYEE WHERE EMPLOYEE_ID = p_emp_id AND DEPARTENT_DEPT_ID = V_DEPT_REQ;
+    SELECT employee_NAME INTO V_name FROM EMPLOYEE WHERE EMPLOYEE_ID = p_emp_id AND DEPARTMENT_DEPT_ID = V_DEPT_REQ;
     IF V_name IS NULL THEN
         RAISE EMPLOYEE_NOT_FOUND;
     END IF;
@@ -47,6 +47,6 @@ BEGIN
             DBMS_OUTPUT.PUT_LINE(' Employee not found in the specified department.');
         WHEN OTHERS THEN
             DBMS_OUTPUT.PUT_LINE('Oops!'||SUBSTR(SQLERRM, 11));
-            DBMS_OUTPUT.PUT_LINE('Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper department.');
+            DBMS_OUTPUT.PUT_LINE('Request ID ' || p_req_id || ' belongs to Department ' || V_DEPT_REQ || '. Assign to the proper employee of respective department.');
 END schedule_emp;
 /
