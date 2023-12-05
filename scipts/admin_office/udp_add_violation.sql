@@ -63,7 +63,7 @@ END add_violation;
 
 
 
-EXEC ADD_VIOLATION('51', 500, 'Pet');
+--EXEC ADD_VIOLATION('51', 500, 'Pet');
 --select * from violations where lease_lease_id=51;
 --select * from lease where lease_id=51;
 
