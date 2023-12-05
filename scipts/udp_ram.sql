@@ -31,7 +31,7 @@ BEGIN
     FROM service_request
     WHERE LEASE_LEASE_ID = p_lease_id
       AND TYPE = upper(p_service)
-      AND COMPLETED_AT IS NOT NULL;
+      AND STATUS LIKE 'ASSIGNED TO%';
 
     IF v_service_count > 0 THEN
         RAISE SERVICE_REQUEST_ALREADY_EXISTS;
