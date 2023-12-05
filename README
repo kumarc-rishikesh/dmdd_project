@@ -8,7 +8,7 @@ How to Run Scripts
 4. run udp_rishi.sql
 5. run udp_ram.sql
 6. run udp_pranav.sql
-7. run admin_grant_user_permissions.sql
-8. run populate_tables
-9. run create_reports.sql
-9. additional tests
+7. run create_reports.sql
+8. run admin_grant_user_permissions.sql
+9. run populate_tables
+10. additional tests
