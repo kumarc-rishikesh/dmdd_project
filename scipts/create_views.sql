@@ -15,3 +15,4 @@ GROUP BY
 ORDER BY
     a.amenity_id,
     booking_hour;
+    
